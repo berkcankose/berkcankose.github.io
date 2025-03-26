@@ -9,13 +9,13 @@ redirect_from:
 
 {% include base_path %}
 
-# Education
-### * PhD in English Language Teaching (<var>Ongoing</var>)
+**Education**
+* PhD in English Language Teaching (<var>Ongoing</var>)
   * Middle East Technical University, Faculty of Education, Department of Foreign Language Education, Ankara, TURKEY
 
 
-# * Master of Arts in English Language Teaching (2024)
-###   * Anadolu University, Faculty of Education, Department of Foreign Language Education, Eskişehir, TURKEY
+ * **Master of Arts in English Language Teaching (2024)**
+   * Anadolu University, Faculty of Education, Department of Foreign Language Education, Eskişehir, TURKEY
     Thesis Title: “Designing and Implementing a Corpus-Based Language Teaching (CBLT) Training Program in a Pre-service EFL Teacher Education Context”, Supervisor: Assoc. Prof. Dr. S. İpek Kuru Gönen
 
   
