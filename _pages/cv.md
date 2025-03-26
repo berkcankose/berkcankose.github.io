@@ -55,16 +55,27 @@ redirect_from:
   Search & Rescue Team Member</li>
 </ul>
 
-<hr style="margin-top: 50px;">
-
-<p align="center">
-  <a href="/files/BerkcanKose_CV.pdf" target="_blank" style="padding: 10px 20px; background-color: #2d6cdf; color: white; text-decoration: none; border-radius: 6px; font-weight: bold;">
-    Download Full CV (PDF)
-  </a>
-</p>
-
-<p align="center">
-  <a href="#top" style="display: inline-block; margin-top: 30px; padding: 8px 14px; background-color: #555; color: white; border-radius: 4px; font-size: 14px; text-decoration: none;">
-    ↑ Back to Top
-  </a>
-</p>
+<!-- Floating Back to Top Button -->
+<style>
+#back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #555;
+  color: white;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  font-size: 24px;
+  line-height: 45px;
+  z-index: 999;
+  text-decoration: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  transition: background-color 0.3s ease;
+}
+#back-to-top:hover {
+  background-color: #333;
+}
+</style>
+<a href="#top" id="back-to-top">↑</a>
