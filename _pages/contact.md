@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: ""
+title: "Contact Info"
 permalink: /contact/
 author_profile: true
 ---
@@ -10,7 +10,6 @@ author_profile: true
 
   <!-- Contact Info Section -->
   <div style="flex: 1; min-width: 250px;">
-    <h2>Contact Info</h2>
     <p><strong>Berkcan Köse</strong><br>
     Research Assistant & PhD student<br>
     Middle East Technical University (METU)<br>
@@ -20,7 +19,6 @@ author_profile: true
 
     <p><strong>Email</strong><br>
     berkcank [at] metu.edu.tr</p>
-    berkcankose [at] gmail.com
   </div>
 
   <!-- Contact Form Section -->
