@@ -54,3 +54,17 @@ redirect_from:
   <li><strong>Dorlion Search & Rescue Team (DAK)</strong> (2019–2022)<br>
   Search & Rescue Team Member</li>
 </ul>
+
+<hr style="margin-top: 50px;">
+
+<p align="center">
+  <a href="/files/BerkcanKose_CV.pdf" target="_blank" style="padding: 10px 20px; background-color: #2d6cdf; color: white; text-decoration: none; border-radius: 6px; font-weight: bold;">
+    Download Full CV (PDF)
+  </a>
+</p>
+
+<p align="center">
+  <a href="#top" style="display: inline-block; margin-top: 30px; padding: 8px 14px; background-color: #555; color: white; border-radius: 4px; font-size: 14px; text-decoration: none;">
+    ↑ Back to Top
+  </a>
+</p>
