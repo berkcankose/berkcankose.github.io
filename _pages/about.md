@@ -14,7 +14,7 @@ redirect_from:
 
   My research focuses on English-medium instruction, corpus-based approaches to language teaching, teacher education, and the integration of technology in ELT.
 
-  This website brings together my research, academic interests, and student resources.
+  This website brings together my research and academic interests.
 </div>
 
 <hr style="border: 0; height: 1px; background: #e0e0e0; margin-bottom: 2rem;">
