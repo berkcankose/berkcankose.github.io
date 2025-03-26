@@ -1,9 +1,10 @@
 ---
-layout: page
+layout: archive
 title: "Contact"
 permalink: /contact/
 author_profile: true
 ---
+
 
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px; margin-top: 30px;">
 
