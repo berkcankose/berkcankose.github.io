@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "Contact"
+title: ""
 permalink: /contact/
 author_profile: true
 ---
@@ -19,6 +19,7 @@ author_profile: true
 
     <p><strong>Email</strong><br>
     berkcank [at] metu.edu.tr</p>
+    berkcankose [at] gmail.com</p>
   </div>
 
   <!-- Contact Form Section -->
