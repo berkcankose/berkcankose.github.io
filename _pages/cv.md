@@ -10,7 +10,7 @@ redirect_from:
 {% include base_path %}
 
 <h2 style="margin-top: 40px;">Education</h2>
-<ul>
+<ul style="margin-bottom: 20px;">
   <li><strong>PhD in English Language Teaching</strong> (<em>Ongoing</em>)<br>
   Middle East Technical University, Faculty of Education, Department of Foreign Language Education, Ankara, TURKEY</li>
   <br>
@@ -23,7 +23,7 @@ redirect_from:
 </ul>
 
 <h2 style="margin-top: 40px;">Work Experience</h2>
-<ul>
+<ul style="margin-bottom: 20px;">
   <li><strong>Research/Teaching Assistant</strong> (March 2022–<em>to date</em>)<br>
   Middle East Technical University, Faculty of Education, Department of Foreign Language Education, Ankara, TURKEY</li>
   <br>
@@ -32,7 +32,7 @@ redirect_from:
 </ul>
 
 <h2 style="margin-top: 40px;">Exchange Experience</h2>
-<ul>
+<ul style="margin-bottom: 20px;">
   <li><strong>Erasmus Exchange</strong> (2018–2019)<br>
   Bachelor of Arts - BA, English Language Teaching, 1 semester in Uniwersytet im. Adama Mickiewicza w Poznaniu, Poznań, POLAND</li>
   <br>
@@ -44,7 +44,7 @@ redirect_from:
 </ul>
 
 <h2 style="margin-top: 40px;">Volunteer Experience</h2>
-<ul>
+<ul style="margin-bottom: 40px;">
   <li><strong>Bilim Kahramanları Derneği</strong> (2019–<em>to date</em>)<br>
   FIRST Lego League (FLL) Tournament Volunteer & Robot Games Referee</li>
   <br>
