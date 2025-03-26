@@ -24,6 +24,8 @@ redirect_from:
   Anadolu University, Faculty of Education, Department of Foreign Language Education, Eskişehir, TURKEY</li>
 </ul>
 
+<hr style="border: 0; height: 1px; background: #e0e0e0; margin-bottom: 2rem;">
+
 <h2 style="margin-top: 40px;">Work Experience</h2>
 <ul style="margin-bottom: 20px;">
   <li><strong>Research/Teaching Assistant</strong> (March 2022–<em>to date</em>)<br>
@@ -32,6 +34,8 @@ redirect_from:
   <li><strong>English Language Instructor/K12 Teacher</strong> (2019–2021)<br>
   Language School & Private Colleges, Eskişehir, TURKEY</li>
 </ul>
+
+<hr style="border: 0; height: 1px; background: #e0e0e0; margin-bottom: 2rem;">
 
 <h2 style="margin-top: 40px;">Exchange Experience</h2>
 <ul style="margin-bottom: 20px;">
@@ -44,6 +48,8 @@ redirect_from:
   <li><strong>Erasmus+ Exchange</strong> (2015)<br>
   Liceum Ogólnoksztatcace im. Adama Mickiewicza w Opolu Lubelskim, Lublin, POLAND</li>
 </ul>
+
+<hr style="border: 0; height: 1px; background: #e0e0e0; margin-bottom: 2rem;">
 
 <h2 style="margin-top: 40px;">Volunteer Experience</h2>
 <ul style="margin-bottom: 60px;">
