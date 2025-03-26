@@ -27,7 +27,7 @@ author:
   pronouns         : # example: "she/her"  
   bio              : "Research Assistant & PhD student at Middle East Technical University"
   location         : "Ankara, Türkiye"
-  employer         : "Middle East Technical University"
+  employer         : # example: "she/her"  
   uri              : "https://avesis.metu.edu.tr/berkcank"
   email            : "berkcank @ metu.edu.tr" 
 
