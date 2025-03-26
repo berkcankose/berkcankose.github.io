@@ -9,7 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
-Education
+# Education
 ======
 * PhD in English Language Teaching (<var>Ongoing</var>)
   * Middle East Technical University, Faculty of Education, Department of Foreign Language Education, Ankara, TURKEY
