@@ -1,19 +1,14 @@
 ---
-title: "Contact"
-permalink: /contact/
-layout: page
-author_profile: true
----
----
 layout: page
 title: "Contact"
 permalink: /contact/
 author_profile: true
 ---
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px; margin-top: 30px;">
 
-  <div>
+  <!-- Contact Info Section -->
+  <div style="flex: 1; min-width: 250px;">
     <h2>Contact Info</h2>
     <p><strong>Berkcan Köse</strong><br>
     Research Assistant & PhD student<br>
@@ -25,29 +20,26 @@ author_profile: true
     berkcank [at] metu.edu.tr</p>
   </div>
 
-  <div>
+  <!-- Contact Form Section -->
+  <div style="flex: 1.5; min-width: 300px;">
     <h2>Send a Message</h2>
-    <form action="https://formsubmit.co/berkcank@metu.edu.tr" method="POST">
-      <input type="hidden" name="_captcha" value="false">
-      
-      <label for="first-name">First Name</label><br>
-      <input type="text" name="first-name" required style="width:100%"><br><br>
-
-      <label for="last-name">Last Name</label><br>
-      <input type="text" name="last-name" required style="width:100%"><br><br>
-
-      <label for="email">Email *</label><br>
-      <input type="email" name="email" required style="width:100%"><br><br>
-
-      <label for="subject">Subject</label><br>
-      <input type="text" name="subject" style="width:100%"><br><br>
-
-      <label for="message">Message</label><br>
-      <textarea name="message" rows="5" required style="width:100%"></textarea><br><br>
-
-      <button type="submit" style="padding: 10px 20px; background-color: #27ae60; color: white; border: none; border-radius: 5px; font-size: 16px;">
-        Submit
-      </button>
+    <form action="https://formspree.io/f/xblgkndk" method="POST">
+      <label>First Name<br>
+        <input type="text" name="first_name" required style="width: 100%; padding: 8px; margin-bottom: 10px;">
+      </label>
+      <label>Last Name<br>
+        <input type="text" name="last_name" required style="width: 100%; padding: 8px; margin-bottom: 10px;">
+      </label>
+      <label>Email *<br>
+        <input type="email" name="email" required style="width: 100%; padding: 8px; margin-bottom: 10px;">
+      </label>
+      <label>Subject<br>
+        <input type="text" name="subject" style="width: 100%; padding: 8px; margin-bottom: 10px;">
+      </label>
+      <label>Message<br>
+        <textarea name="message" rows="6" required style="width: 100%; padding: 8px; margin-bottom: 10px;"></textarea>
+      </label>
+      <button type="submit" style="padding: 10px 20px; background-color: #28a745; border: none; color: white; cursor: pointer; border-radius: 5px;">Submit</button>
     </form>
   </div>
 
