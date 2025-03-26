@@ -9,6 +9,8 @@ redirect_from:
 
 {% include base_path %}
 
+<div style="text-align: justify;">
+
 <h2 style="margin-top: 40px;">Education</h2>
 <ul style="margin-bottom: 20px;">
   <li><strong>PhD in English Language Teaching</strong> (<em>Ongoing</em>)<br>
@@ -44,7 +46,7 @@ redirect_from:
 </ul>
 
 <h2 style="margin-top: 40px;">Volunteer Experience</h2>
-<ul style="margin-bottom: 100px;">
+<ul style="margin-bottom: 60px;">
   <li><strong>Bilim Kahramanları Derneği</strong> (2019–<em>to date</em>)<br>
   FIRST Lego League (FLL) Tournament Volunteer & Robot Games Referee</li>
   <br>
@@ -54,6 +56,8 @@ redirect_from:
   <li><strong>Dorlion Search & Rescue Team (DAK)</strong> (2019–2022)<br>
   Search & Rescue Team Member</li>
 </ul>
+
+</div>
 
 <!-- Floating Back to Top Button -->
 <style>
@@ -76,6 +80,17 @@ redirect_from:
 }
 #back-to-top:hover {
   background-color: #333;
+}
+
+footer .sitemap {
+  display: none !important;
+}
+
+.sidebar .social-icons .fa-x-twitter::after {
+  content: "X" !important;
+  font-weight: normal;
+  font-size: 14px;
+  margin-left: 4px;
 }
 </style>
 <a href="#" id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">↑</a>
