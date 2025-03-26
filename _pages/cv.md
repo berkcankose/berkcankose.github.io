@@ -78,4 +78,4 @@ redirect_from:
   background-color: #333;
 }
 </style>
-<a href="#top" id="back-to-top">↑</a>
+<a href="#" id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">↑</a>
