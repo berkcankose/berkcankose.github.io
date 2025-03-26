@@ -1,7 +1,7 @@
 ---
 layout: archive
-title: "CV"
-permalink: /cv/
+title: "About me"
+permalink: /aboutme/
 author_profile: true
 redirect_from:
   - /resume
@@ -11,54 +11,45 @@ redirect_from:
 
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+* PhD in English Language Teaching (Ongoing)
+  * Middle East Technical University, Faculty of Education, Department of Foreign Language Education, Ankara, TURKEY
 
-Work experience
-======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+* Master of Arts in English Language Teaching (2024)
+  * Anadolu University, Faculty of Education, Department of Foreign Language Education, Eskişehir, TURKEY
+    Thesis Title: “Designing and Implementing a Corpus-Based Language Teaching (CBLT) Training Program in a Pre-service EFL Teacher Education Context”, Supervisor: Assoc. Prof. Dr. S. İpek Kuru Gönen
+  
+* Bachelor of Arts in English Language Teaching (2021)
+  * Anadolu University, Faculty of Education, Department of Foreign Language Education, Eskişehir, TURKEY
 
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
 
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-  
-Skills
+Work Experience
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* Research/Teaching Assistant (March 2022-to date)
+  * Middle East Technical University, Faculty of Education, Department of Foreign Language Education, Ankara, TURKEY
+    
+* English Language Instructor/K12 Teacher (2019-2021)
+  * Language School & Private Colleges, Eskişehir, TURKEY
 
-Publications
+
+Exchange Experience
 ======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+* Erasmus Exchange (2018-2019)
+  * Bachelor of Arts - BA, English Language Teaching, 1 semester in Uniwersytet im. Adama Mickiewicza w Poznaniu, Poznań, POLAND
+
+* Erasmus+ Exchange (2017)
+  * Elektrotehnička i prometna škola Osijek, Osijek, CROATIA
+    
+* Erasmus+ Exchange (2015)
+  * Liceum Ogólnoksztatcace im. Adama Mickiewicza w Opolu Lubelskim, Lublin, POLAND
   
-Talks
+
+Volunteer Experience
 ======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+* Bilim Kahramanları Derneği (2019-to date)
+  * FIRST Lego League (FLL) Tournament Volunteer & Robot Games Referee 
+
+* Educational Volunteers Foundation of Turkey (TEGV) (2018-2022)
+  * English and Turkish Activity Volunteer
+    
+* Dorlion Search & Rescue Team (DAK) (2019-2022)
+  * Search & Rescue Team Member
