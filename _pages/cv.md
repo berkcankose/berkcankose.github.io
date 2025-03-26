@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "cv"
+title: "CV"
 permalink: /cv/
 author_profile: true
 redirect_from:
@@ -11,7 +11,7 @@ redirect_from:
 
 Education
 ======
-* PhD in English Language Teaching (Ongoing)
+* PhD in English Language Teaching (<var>Ongoing</var>)
   * Middle East Technical University, Faculty of Education, Department of Foreign Language Education, Ankara, TURKEY
 
 * Master of Arts in English Language Teaching (2024)
@@ -24,7 +24,7 @@ Education
 
 Work Experience
 ======
-* Research/Teaching Assistant (March 2022-to date)
+* Research/Teaching Assistant (March 2022-<var>to date</var>)
   * Middle East Technical University, Faculty of Education, Department of Foreign Language Education, Ankara, TURKEY
     
 * English Language Instructor/K12 Teacher (2019-2021)
@@ -45,7 +45,7 @@ Exchange Experience
 
 Volunteer Experience
 ======
-* Bilim Kahramanları Derneği (2019-to date)
+* Bilim Kahramanları Derneği (2019-<var>to date</var>)
   * FIRST Lego League (FLL) Tournament Volunteer & Robot Games Referee 
 
 * Educational Volunteers Foundation of Turkey (TEGV) (2018-2022)
