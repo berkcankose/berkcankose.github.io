@@ -14,12 +14,13 @@ author_profile: true
     <p><strong>Berkcan Köse</strong><br>
     Research Assistant & PhD student<br>
     Middle East Technical University (METU)<br>
-    Faculty of Education, Dept. of Foreign Language Education<br>
-    06800 Çankaya, Ankara, Turkey</p>
+    Faculty of Education<br>
+    Dept. of Foreign Language Education<br>
+    Ankara, TURKEY</p>
 
     <p><strong>Email</strong><br>
     berkcank [at] metu.edu.tr</p>
-    berkcankose [at] gmail.com</p>
+    berkcankose [at] gmail.com
   </div>
 
   <!-- Contact Form Section -->
