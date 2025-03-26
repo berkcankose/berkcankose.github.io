@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-Hello! I’m a research assistant and PhD student in the Department of Foreign Language Education at Middle East Technical University (METU), Türkiye.
+Hello! I’m a Research Assistant and PhD student in the Department of Foreign Language Education at Middle East Technical University (METU), Türkiye.
 
 My research focuses on English-medium instruction, corpus-based approaches to language teaching, teacher education, and the integration of technology in ELT.
 
