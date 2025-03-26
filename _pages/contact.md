@@ -11,9 +11,9 @@ permalink: /contact/
 author_profile: true
 ---
 
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
 
-  <div style="flex: 1; min-width: 280px;">
+  <div>
     <h2>Contact Info</h2>
     <p><strong>Berkcan Köse</strong><br>
     Research Assistant & PhD student<br>
@@ -25,26 +25,27 @@ author_profile: true
     berkcank [at] metu.edu.tr</p>
   </div>
 
-  <div style="flex: 1; min-width: 280px;">
+  <div>
     <h2>Send a Message</h2>
     <form action="https://formsubmit.co/berkcank@metu.edu.tr" method="POST">
-
+      <input type="hidden" name="_captcha" value="false">
+      
       <label for="first-name">First Name</label><br>
-      <input type="text" name="first-name" required><br><br>
+      <input type="text" name="first-name" required style="width:100%"><br><br>
 
       <label for="last-name">Last Name</label><br>
-      <input type="text" name="last-name" required><br><br>
+      <input type="text" name="last-name" required style="width:100%"><br><br>
 
       <label for="email">Email *</label><br>
-      <input type="email" name="email" required><br><br>
+      <input type="email" name="email" required style="width:100%"><br><br>
 
       <label for="subject">Subject</label><br>
-      <input type="text" name="subject"><br><br>
+      <input type="text" name="subject" style="width:100%"><br><br>
 
       <label for="message">Message</label><br>
-      <textarea name="message" rows="6" required></textarea><br><br>
+      <textarea name="message" rows="5" required style="width:100%"></textarea><br><br>
 
-      <button type="submit" style="padding: 10px 20px; background-color: #2ecc71; color: white; border: none; border-radius: 5px; font-size: 16px;">
+      <button type="submit" style="padding: 10px 20px; background-color: #27ae60; color: white; border: none; border-radius: 5px; font-size: 16px;">
         Submit
       </button>
     </form>
