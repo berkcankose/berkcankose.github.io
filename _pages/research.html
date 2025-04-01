@@ -56,5 +56,41 @@ author_profile: true
 
 </div>
 
+<!-- Floating Back to Top Button -->
+<style>
+#back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #555;
+  color: white;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  font-size: 24px;
+  line-height: 45px;
+  z-index: 999;
+  text-decoration: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  transition: background-color 0.3s ease;
+}
+#back-to-top:hover {
+  background-color: #333;
+}
+
+footer .sitemap {
+  display: none !important;
+}
+
+.sidebar .social-icons .fa-x-twitter::after {
+  content: "X" !important;
+  font-weight: normal;
+  font-size: 14px;
+  margin-left: 4px;
+}
+</style>
+<a href="#" id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">↑</a>
+
 <!-- GoatCounter Analytics -->
 <script data-goatcounter="https://berkcankose.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
