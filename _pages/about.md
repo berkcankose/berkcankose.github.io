@@ -10,7 +10,7 @@ redirect_from:
 <div style="text-align: justify; margin-bottom: 2rem;">
   <h2 style="margin-top: 0;">Welcome!</h2>
 
-  Hello! I’m a Research Assistant and PhD student in the Department of Foreign Language Education at Middle East Technical University (METU), Türkiye.
+  I’m a Research Assistant and PhD student in the Department of Foreign Language Education at Middle East Technical University (METU), Türkiye.
 
   My research focuses on English-medium instruction, corpus-based approaches to language teaching, teacher education, and the integration of technology in ELT.
 
