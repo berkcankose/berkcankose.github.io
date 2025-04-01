@@ -1,6 +1,7 @@
 /* ==========================================================================
    DEFAULT THEME
    ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
 
 /* Color codes used for the theme */
 $gray                       : #7a8288;
@@ -42,6 +43,7 @@ $sidebar-screen-min-width   : 1024px;
     --global-text-color                 : #{$dark-gray};
     --global-text-color-light           : #{$light-gray};
     --global-thead-color                : #{$lighter-gray};
-$global-font-family: 'Merriweather', serif;
+--global-font-family: 'Merriweather', serif;
+
 
 }
