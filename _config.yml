@@ -355,3 +355,7 @@ compress_html:
     envs: development
 
 robots: noindex
+
+
+# _config.yml
+favicon: "/favicon.ico"
