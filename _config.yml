@@ -356,6 +356,3 @@ compress_html:
 
 robots: noindex
 
-
-# _config.yml
-favicon: "/favicon.ico"
