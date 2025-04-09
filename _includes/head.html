@@ -16,9 +16,19 @@
 </script>
 
 <!-- For all browsers -->
-<link rel="icon" href="{{ '/images/favicon.ico' | relative_url }}" type="image/x-icon">
-<link rel="shortcut icon" href="{{ '/images/favicon.ico' | relative_url }}" type="image/x-icon">
+<!-- Standard Favicon -->
+<link rel="icon" href="{{ '/favicon.ico' | relative_url }}" type="image/x-icon">
 
+<!-- PNG Favicon for modern browsers -->
+<link rel="icon" type="image/png" sizes="96x96" href="{{ '/images/favicon-96x96.png' | relative_url }}">
+
+<!-- Apple Touch Icon -->
+<link rel="apple-touch-icon" sizes="180x180" href="{{ '/images/apple-touch-icon.png' | relative_url }}">
+
+<!-- Optional: Remove this if site.webmanifest is missing -->
+{# <link rel="manifest" href="{{ '/images/site.webmanifest' | relative_url }}"> #}
+
+<meta name="apple-mobile-web-app-title" content="Berkcan Köse">
 
 
 
