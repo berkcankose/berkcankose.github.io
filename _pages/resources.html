@@ -5,22 +5,111 @@ permalink: /resources/
 author_profile: true
 ---
 
+<style>
+  /* ===== Corpus Resources table ===== */
+  .corpus-table-wrapper { margin: 1.25rem 0 2.5rem; }
+  .corpus-table { width: 100%; border-collapse: collapse; }
+  .corpus-table thead th {
+    background: #e7f3e7; /* soft green tint like the example */
+    color: #185c18;
+    font-weight: 700; 
+    text-align: left;
+    padding: .9rem .8rem;
+    border-bottom: 2px solid #cfe6cf;
+  }
+  .corpus-table tbody td {
+    vertical-align: top;
+    padding: 1rem .8rem;
+    border-bottom: 1px solid #eee;
+  }
+  .corpus-table tbody tr:nth-child(even) td { background: #fafafa; }
+
+  /* Category separator row */
+  .corpus-cat-row td {
+    background: #f2f6f2;
+    color: #185c18;
+    font-weight: 700;
+    border-top: 2px solid #cfe6cf;
+    border-bottom: 2px solid #cfe6cf;
+    padding: .7rem .8rem;
+  }
+
+  .corpus-name { width: 18ch; font-weight: 600; }
+  .corpus-website { width: 32%; }
+  .corpus-intro   { width: 40%; }
+  .corpus-availability { white-space: nowrap; font-weight: 600; color: #333; }
+
+  /* Website cell: thumbnail + link */
+  .site-box { display: flex; gap: .75rem; align-items: flex-start; }
+  .site-thumb { width: 220px; max-width: 35vw; height: auto; border-radius: 6px; border: 1px solid #e5e5e5; }
+  .site-link { margin: .15rem 0 0 0; word-break: break-word; }
+  .site-link a { text-decoration: none; border-bottom: 1px dotted #185c18; }
+  .site-link a:hover { border-bottom-style: solid; }
+
+  /* Mobile: stack cells like cards */
+  @media (max-width: 820px) {
+    .corpus-table thead { display: none; }
+    .corpus-table, .corpus-table tbody, .corpus-table tr, .corpus-table td { display: block; width: 100%; }
+    .corpus-table tbody tr { margin: 0 0 1.2rem; border: 1px solid #eee; border-radius: 10px; overflow: hidden; }
+    .corpus-table tbody td { border: none; padding: .8rem .9rem; }
+    .corpus-cat-row { border: none; }
+    .corpus-cat-row td { border: none; border-radius: 10px; }
+    .corpus-name { font-size: 1.05rem; }
+    .corpus-availability { margin-top: .3rem; }
+    .site-box { flex-direction: column; }
+    .site-thumb { width: 100%; max-width: 100%; }
+  }
+</style>
+
 <section id="corpus-resources">
   <h2>Corpus Resources</h2>
-  <p>Curated links to corpora, concordancers, and tools for corpus-informed teaching and research. Adapted from the <a href="https://corpus.eduhk.hk/cap/corpus-resources/" target="_blank" rel="noopener">Corpus-Aided Platform (CAP)</a> at EdUHK.</p>
+  <p>Curated links to corpora, concordancers, and tools for corpus-informed teaching and research. Adapted from the 
+    <a href="https://corpus.eduhk.hk/cap/corpus-resources/" target="_blank" rel="noopener">Corpus-Aided Platform (CAP)</a> at EdUHK.</p>
 
-  {% for cat in site.data.corpus_resources.categories %}
-    <h3 id="{{ cat.key }}">{{ cat.title }}</h3>
-    <ul>
-      {% for item in cat.items %}
-        <li>
-          <a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.name }}</a>
-          {% if item.note %} — {{ item.note }}{% endif %}
-          {% if item.availability %} <em>({{ item.availability }})</em>{% endif %}
-        </li>
-      {% endfor %}
-    </ul>
-  {% endfor %}
+  <div class="corpus-table-wrapper">
+    <table class="corpus-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Website</th>
+          <th>Introduction</th>
+          <th>Availability</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for cat in site.data.corpus_resources.categories %}
+          <tr class="corpus-cat-row"><td colspan="4">{{ cat.title }}</td></tr>
+
+          {% for item in cat.items %}
+          <tr>
+            <td class="corpus-name">{{ item.name }}</td>
+
+            <td class="corpus-website">
+              <div class="site-box">
+                {% if item.screenshot %}
+                  <img class="site-thumb" src="{{ item.screenshot | relative_url }}" alt="{{ item.name }} screenshot">
+                {% endif %}
+                <p class="site-link">
+                  <a href="{{ item.url }}" target="_blank" rel="noopener">
+                    {{ item.url | replace: "https://", "" | replace: "http://", "" }}
+                  </a>
+                </p>
+              </div>
+            </td>
+
+            <td class="corpus-intro">
+              {% if item.note %}{{ item.note }}{% endif %}
+            </td>
+
+            <td class="corpus-availability">
+              {% if item.availability %}{{ item.availability }}{% endif %}
+            </td>
+          </tr>
+          {% endfor %}
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
 
   <p class="muted" style="font-size:0.9em">
     Notes are brief summaries; please see each site for full details. Last updated: {{ site.time | date: "%Y-%m-%d" }}.
