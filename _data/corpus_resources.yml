@@ -4,11 +4,11 @@ categories:
     items:
       - name: BYU Corpora
         url: https://www.corpusdata.org/
-        note: Suite of widely used corpora and teaching resources.
+        note: Widely used suite of corpora and teaching resources.
         availability: free
       - name: British National Corpus (BNC)
         url: https://www.english-corpora.org/bnc/
-        note: 100M words of British English; written + spoken transcripts.
+        note: 100M words of British English (written + spoken).
         availability: free (registration)
       - name: COCA
         url: https://www.english-corpora.org/coca/
@@ -16,11 +16,11 @@ categories:
         availability: free (registration)
       - name: Compleat Lexical Tutor
         url: https://lextutor.ca/
-        note: Collection of tools for lexical analysis and pedagogy.
+        note: Online tools for lexical analysis and pedagogy.
         availability: free
       - name: MICASE (spoken)
         url: https://quod.lib.umich.edu/m/micase/
-        note: Academic spoken English transcripts from U-Michigan.
+        note: Academic spoken English transcripts (U-Michigan).
         availability: free
       - name: MICUSP (upper-level papers)
         url: https://micusp.eecs.umich.edu/
@@ -28,7 +28,36 @@ categories:
         availability: free
       - name: IntelliText (Leeds CTS)
         url: http://corpus.leeds.ac.uk/it/
-        note: Step-by-step search builder and POS editor interface.
+        note: Search builder and POS editor interface.
+        availability: free
+      # — additions from corpling4efl —
+      - name: BACKBONE (multilingual pedagogic spoken corpus)
+        url: https://projects.ael.uni-tuebingen.de/backbone/
+        note: Pedagogic spoken corpus with video; online search.
+        availability: free
+      - name: ICNALE (International Corpus Network of Asian Learners of English)
+        url: https://language.sakura.ne.jp/icnale/
+        note: Learner corpus with texts/audio from Asian EFL learners.
+        availability: free
+      - name: MOECS (Multilingual Opinion Essays by College Students)
+        url: https://www.u-sacred-heart.ac.jp/english/teachers/tsuruga/moecs/
+        note: Multilingual student essay corpus.
+        availability: free
+      - name: TECCL (Ten-thousand English Compositions of Chinese Learners)
+        url: http://www.corpus4u.org/
+        note: Large Chinese learner corpus (raw and POS-tagged).
+        availability: free
+      - name: TED Corpus Search Engine
+        url: https://yohasebe.com/tcse/
+        note: Search TED talk transcripts with links to videos.
+        availability: free
+      - name: WebParaNews (EN–JA parallel news)
+        url: https://www.antlabsolutions.com/webparanews.html
+        note: Japanese–English parallel newspaper corpus.
+        availability: free
+      - name: SCoRE (Sentence Corpus of Remedial English)
+        url: https://www.score-corpus.org/
+        note: Sentence corpus & pattern browser for lower-proficiency learners.
         availability: free
 
   - key: eduhk_corpora
@@ -52,11 +81,11 @@ categories:
         availability: free
 
   - key: concordance_tools
-    title: Concordance Tools
+    title: Concordance & Collocation Tools
     items:
       - name: Word and Phrase
         url: https://www.english-corpora.org/wordandphrase/
-        note: Collocations and full-text analysis.
+        note: Collocations and full-text analysis (COCA-based).
         availability: free (registration)
       - name: Just The Word
         url: https://just-the-word.com/
@@ -64,15 +93,28 @@ categories:
         availability: free
       - name: Linggle
         url: https://linggle.com/
-        note: Web-scale collocation search.
+        note: Web-scale collocation/phrase search.
         availability: free
-      - name: Corpus Concordance English
+      - name: Corpus Concordance English (Lextutor)
         url: https://www.lextutor.ca/concordancers/concord_e.html
         note: Simple online concordancer with sub-corpus options.
         availability: free
       - name: WebCorp Live
         url: http://www.webcorp.org.uk/live/
         note: Build ad-hoc corpora from the web.
+        availability: free
+      # — additions from corpling4efl —
+      - name: SkELL (Sketch Engine for Language Learning)
+        url: https://skell.sketchengine.co.uk/
+        note: Simple concordances and word sketches; learner-friendly.
+        availability: free
+      - name: Skylight (browser concordancer)
+        url: https://www.skylight-to-english.co.uk/
+        note: In-browser concordancer for quick classroom materials.
+        availability: free
+      - name: Netspeak
+        url: https://www.netspeak.org/
+        note: Collocation/phrase suggestion engine from web data.
         availability: free
 
   - key: corpus_tools
@@ -88,7 +130,7 @@ categories:
         availability: paid (trial)
       - name: VersaText
         url: https://versatext.ca/
-        note: Web tool to explore the language of a single text.
+        note: Explore the language of a single text.
         availability: free
       - name: Sketch Engine
         url: https://www.sketchengine.eu/
@@ -96,21 +138,90 @@ categories:
         availability: paid (free trial)
       - name: Verbal Stratagems
         url: https://www.verbalstratagems.com/
-        note: Phrases for functions (agreeing, clarifying, etc.).
+        note: Communicative function phrase lists (agreeing, clarifying, etc.).
         availability: free
       - name: Cambridge English Vocabulary Profile
         url: https://www.englishprofile.org/wordlists
         note: CEFR-level vocabulary profiles (A1–C2).
         availability: free (registration)
-
-  - key: other_resources
-    title: Other Useful Resources
-    items:
-      - name: Grammar Teaching Resources (overview)
-        url: https://www.cambridge.org/elt/blog/
-        note: Selected grammar teaching resources and readers.
+      # — additions from corpling4efl —
+      - name: LancsBox
+        url: https://corpora.lancs.ac.uk/lancsbox/
+        note: Toolkit with collocation network visualiser (GraphColl).
+        availability: free (registration optional)
+      - name: NoSketch Engine
+        url: https://nlp.fi.muni.cz/trac/noske
+        note: Open-source variant of Sketch Engine for your own corpora.
+        availability: free (open source)
+      - name: TextSTAT
+        url: https://neon.niederlandistik.fu-berlin.de/en/textstat/
+        note: Lightweight concordancer/keyword counter; great for DIY corpora.
         availability: free
-      - name: Mandarin Pronunciation—Corpus Site
-        url: https://corpus.eduhk.hk/mandarin/
-        note: Corpus-based Mandarin pronunciation practice.
+      - name: AntCorGen
+        url: https://www.laurenceanthony.net/software/antcorgen/
+        note: Compile a research-article corpus from PLoS ONE.
+        availability: free
+      - name: ICEweb
+        url: https://martinweisser.org/iceweb.html
+        note: DIY corpus-building interface for the ICE project.
+        availability: free
+
+  - key: corpus_informed_resources
+    title: Corpus-informed / Derived Resources
+    items:
+      - name: English Profile
+        url: https://www.englishprofile.org/
+        note: CEFR-coded sense inventory & resources (broader than EVP).
+        availability: free (registration)
+      - name: FLAX
+        url: http://flax.nzdl.org/
+        note: Corpus-derived OERs, games, and apps for learning.
+        availability: free
+      - name: New General Service List (NGSL)
+        url: https://www.newgeneralservicelist.org/
+        note: High-frequency word lists (incl. Academic lists) with resources.
+        availability: free
+      - name: WriteAway
+        url: https://writeaway.nlpweb.org/
+        note: Corpus-grounded phrase/chunk suggestions for writing.
+        availability: free
+
+  - key: dictionaries
+    title: Learner Dictionaries & Bilingual Resources
+    items:
+      - name: Cambridge Learner’s Dictionary
+        url: https://dictionary.cambridge.org/
+        note: CEFR-tagged senses, abundant examples.
+        availability: free
+      - name: Oxford Learner’s Dictionaries
+        url: https://www.oxfordlearnersdictionaries.com/
+        note: Clear interface, rich learner examples.
+        availability: free
+      - name: Longman Dictionary of Contemporary English
+        url: https://www.ldoceonline.com/
+        note: Collocations & example-rich learner dictionary.
+        availability: free
+      - name: Merriam-Webster Learner’s Dictionary
+        url: https://www.learnersdictionary.com/
+        note: US-oriented learner dictionary.
+        availability: free
+      - name: Linguee
+        url: https://www.linguee.com/
+        note: Parallel examples from real-world translations.
+        availability: free
+      - name: PHaVE Dictionary (Phrasal Verbs)
+        url: https://phave-dictionary.englishup.me/
+        note: Frequent phrasal verbs with sense distinctions & examples.
+        availability: free
+
+  - key: general_guides
+    title: General Guides / Getting Started
+    items:
+      - name: Intro to Text Analysis (PSU Libraries)
+        url: http://guides.libraries.psu.edu/textanalysis
+        note: Orientation to text analysis concepts & tools.
+        availability: free
+      - name: Text Mining – Web-based Resources (PSU Libraries)
+        url: https://guides.libraries.psu.edu/textmining/web
+        note: Curated links to web tools & readings for text mining.
         availability: free
