@@ -1,0 +1,151 @@
+---
+layout: single
+title: Corpus Resources
+permalink: /resources/
+author_profile: true
+---
+
+<section id="corpus-resources">
+  <h2>Corpus Resources</h2>
+  <p>Curated links to corpora, concordancers, and tools for corpus-informed teaching and research. Adapted from the <a href="https://corpus.eduhk.hk/cap/corpus-resources/" target="_blank" rel="noopener">Corpus-Aided Platform (CAP)</a> at EdUHK.</p>
+
+  {% for cat in site.data.corpus_resources.categories %}
+    <h3 id="{{ cat.key }}">{{ cat.title }}</h3>
+    <ul>
+      {% for item in cat.items %}
+        <li>
+          <a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.name }}</a>
+          {% if item.note %} — {{ item.note }}{% endif %}
+          {% if item.availability %} <em>({{ item.availability }})</em>{% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endfor %}
+
+  <p class="muted" style="font-size:0.9em">
+    Notes are brief summaries; please see each site for full details. Last updated: {{ site.time | date: "%Y-%m-%d" }}.
+  </p>
+</section>
+
+
+categories:
+  - key: online_corpora
+    title: Online Corpora
+    items:
+      - name: BYU Corpora
+        url: https://www.corpusdata.org/
+        note: Suite of widely used corpora and teaching resources.
+        availability: free
+      - name: British National Corpus (BNC)
+        url: https://www.english-corpora.org/bnc/
+        note: 100M words of British English; written + spoken transcripts.
+        availability: free (registration)
+
+      - name: COCA
+        url: https://www.english-corpora.org/coca/
+        note: Large, balanced American English corpus.
+        availability: free (registration)
+
+      - name: Compleat Lexical Tutor
+        url: https://lextutor.ca/
+        note: Collection of tools for lexical analysis and pedagogy.
+        availability: free
+
+      - name: MICASE (spoken)
+        url: https://quod.lib.umich.edu/m/micase/
+        note: Academic spoken English transcripts from U-Michigan.
+        availability: free
+
+      - name: MICUSP (upper-level papers)
+        url: https://micusp.eecs.umich.edu/
+        note: Upper-level student papers (written academic English).
+        availability: free
+
+      - name: IntelliText (Leeds CTS)
+        url: http://corpus.leeds.ac.uk/it/
+        note: Step-by-step search builder and POS editor interface.
+        availability: free
+
+  - key: eduhk_corpora
+    title: Online Corpora by EdUHK LML
+    items:
+      - name: LML Corpus Linguistics Projects
+        url: https://www.lml.eduhk.hk/research/corpus-linguistics
+        note: Department projects and showcases.
+        availability: free
+      - name: EAP Corpora
+        url: https://corpus.eduhk.hk/eap/
+        note: English for Academic Purposes collections.
+        availability: free
+      - name: Corpus-based Pronunciation Learning
+        url: https://corpus.eduhk.hk/phonetics/
+        note: Pronunciation learning with corpus support.
+        availability: free
+      - name: English–Chinese Parallel Concordancer
+        url: https://corpus.eduhk.hk/concordance/
+        note: Parallel concordancer for EN–ZH.
+        availability: free
+
+  - key: concordance_tools
+    title: Concordance Tools
+    items:
+      - name: Word and Phrase
+        url: https://www.english-corpora.org/wordandphrase/
+        note: Collocations and full-text analysis.
+        availability: free (registration)
+      - name: Just The Word
+        url: https://just-the-word.com/
+        note: BNC-based collocation finder.
+        availability: free
+      - name: Linggle
+        url: https://linggle.com/
+        note: Web-scale collocation search.
+        availability: free
+      - name: Corpus Concordance English
+        url: https://www.lextutor.ca/concordancers/concord_e.html
+        note: Simple online concordancer with sub-corpus options.
+        availability: free
+      - name: WebCorp Live
+        url: http://www.webcorp.org.uk/live/
+        note: Build ad-hoc corpora from the web.
+        availability: free
+
+  - key: corpus_tools
+    title: Corpus Tools
+    items:
+      - name: AntConc
+        url: https://www.laurenceanthony.net/software/antconc/
+        note: Desktop toolkit for concordancing and text analysis.
+        availability: free
+      - name: WordSmith Tools
+        url: https://lexically.net/wordsmith/
+        note: Windows suite for word pattern analysis.
+        availability: paid (trial)
+      - name: VersaText
+        url: https://versatext.ca/
+        note: Web tool to explore the language of a single text.
+        availability: free
+      - name: Sketch Engine
+        url: https://www.sketchengine.eu/
+        note: 400+ ready-to-use corpora in 90+ languages.
+        availability: paid (free trial)
+      - name: Verbal Stratagems
+        url: https://www.verbalstratagems.com/
+        note: Phrases for functions (agreeing, clarifying, etc.).
+        availability: free
+      - name: Cambridge English Vocabulary Profile
+        url: https://www.englishprofile.org/wordlists
+        note: CEFR-level vocabulary profiles (A1–C2).
+        availability: free (registration)
+
+  - key: other_resources
+    title: Other Useful Resources
+    items:
+      - name: Grammar Teaching Resources (overview)
+        url: https://www.cambridge.org/elt/blog/
+        note: Selected grammar teaching resources and readers.
+        availability: free
+      - name: Mandarin Pronunciation—Corpus Site
+        url: https://corpus.eduhk.hk/mandarin/
+        note: Corpus-based Mandarin pronunciation practice.
+        availability: free
