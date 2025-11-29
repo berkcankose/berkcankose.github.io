@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japan Trip Checklist | Berkcan Köse</title>
+    
+    <!-- React & ReactDOM -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    
+    <!-- Babel for JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+        // Lucide Icons Wrapper
+        const { useState, useEffect } = React;
+        const { Check, Plus, Trash2, RotateCcw, Plane, Save, HardDrive } = lucide;
+
+        // --- Default Data ---
+        const DEFAULT_CATEGORIES = [
+            {
+              id: 'cat1',
+              title: "1. Travel Essentials",
+              items: [
+                { id: 101, text: "Passport + 2 photocopies", packed: false, note: "Keep copies separate" },
+                { id: 113, text: "Passport cover", packed: false, note: "Protect your documents" },
+                { id: 102, text: "Flight tickets / confirmation", packed: false, note: "Digital + Printed" },
+                { id: 103, text: "Hotel reservations", packed: false, note: "Super Hotel & Ibaraki Central (Digital + Printed)" },
+                { id: 104, text: "Conference registration confirmation", packed: false, note: "For JAAL" },
+                { id: 105, text: "Wallet", packed: false, note: "Credit cards, Cash (TL, JPY, small USD)" },
+                { id: 106, text: "Transportation card: Suica/PASMO", packed: false, note: "Buy on arrival if needed" },
+                { id: 107, text: "Travel insurance documents", packed: false, note: "" },
+                { id: 108, text: "Phone + charger", packed: false, note: "" },
+                { id: 109, text: "Power bank (20,000 mAh)", packed: false, note: "Recommended capacity" },
+                { id: 110, text: "Japanese plug adaptor (Type A)", packed: false, note: "Crucial" },
+                { id: 111, text: "Luggage locks", packed: false, note: "TSA approved" },
+                { id: 112, text: "Small first-aid kit", packed: false, note: "" },
+              ]
+            },
+            {
+              id: 'cat2',
+              title: "2. Clothing (Academic + Casual)",
+              items: [
+                { id: 201, text: "2–3 Formal Shirts", packed: false, note: "Conference & Toyo Uni" },
+                { id: 202, text: "1–2 Formal Trousers", packed: false, note: "" },
+                { id: 203, text: "1 Blazer", packed: false, note: "Conference essential" },
+                { id: 204, text: "Comfortable Formal Shoes", packed: false, note: "Easy to remove preferred" },
+                { id: 205, text: "Undershirts", packed: false, note: "" },
+                { id: 206, text: "Belt", packed: false, note: "" },
+                { id: 207, text: "Smart socks", packed: false, note: "" },
+                { id: 208, text: "4–5 Casual T-shirts", packed: false, note: "Daily wear" },
+                { id: 209, text: "2–3 Long-sleeved shirts", packed: false, note: "" },
+                { id: 210, text: "1 Warm sweater", packed: false, note: "December is cold" },
+                { id: 211, text: "1 Light to medium jacket", packed: false, note: "Layering" },
+                { id: 212, text: "1 Warm coat", packed: false, note: "Tokyo ~10°C; Kyoto colder" },
+                { id: 213, text: "Comfortable walking shoes", packed: false, note: "You will walk A LOT" },
+                { id: 218, text: "Sunglasses", packed: false, note: "Winter sun can be bright" },
+                { id: 214, text: "Pajamas", packed: false, note: "" },
+                { id: 215, text: "Underwear & socks", packed: false, note: "Enough for trip duration" },
+                { id: 216, text: "Gloves, Scarf, Beanie", packed: false, note: "Weather accessories" },
+                { id: 217, text: "Compact umbrella", packed: false, note: "Rains frequently in Dec" },
+              ]
+            },
+            {
+              id: 'cat3',
+              title: "3. Toiletries & Personal Care",
+              items: [
+                { id: 301, text: "Toothbrush + toothpaste", packed: false, note: "" },
+                { id: 302, text: "Dental floss", packed: false, note: "" },
+                { id: 303, text: "Shampoo + conditioner", packed: false, note: "Travel size or rely on hotel" },
+                { id: 304, text: "Body wash", packed: false, note: "" },
+                { id: 305, text: "Razor + shaving gel", packed: false, note: "" },
+                { id: 306, text: "Deodorant", packed: false, note: "" },
+                { id: 310, text: "Hand sanitizer / Kolonya", packed: false, note: "Turkish essential" },
+                { id: 313, text: "Face Masks", packed: false, note: "Disease protection & etiquette" },
+                { id: 315, text: "Quick drying towel/napkin", packed: false, note: "Public restrooms lack towels" },
+                { id: 307, text: "Cologne / Perfume", packed: false, note: "" },
+                { id: 308, text: "Nail clipper", packed: false, note: "" },
+                { id: 309, text: "Tissue packs & Wet wipes", packed: false, note: "" },
+                { id: 311, text: "Personal medication", packed: false, note: "With prescriptions" },
+                { id: 312, text: "Painkillers & Gastroprotective meds", packed: false, note: "For digestion/headaches" },
+                { id: 314, text: "Cold/Flu Medicine", packed: false, note: "Check laws: NO Pseudoephedrine/Codeine" },
+              ]
+            },
+            {
+              id: 'cat4',
+              title: "4. Beauty / Grooming Items",
+              items: [
+                { id: 401, text: "Face wash", packed: false, note: "" },
+                { id: 402, text: "Moisturizer", packed: false, note: "Winter is dry" },
+                { id: 403, text: "Sunscreen", packed: false, note: "Even in winter" },
+                { id: 404, text: "Lip balm", packed: false, note: "" },
+                { id: 405, text: "Hair styling product", packed: false, note: "Gel/wax/cream" },
+                { id: 406, text: "Comb or brush", packed: false, note: "" },
+                { id: 407, text: "Sheet masks", packed: false, note: "Optional" },
+              ]
+            },
+            {
+              id: 'cat5',
+              title: "5. Researcher / Academic Essentials",
+              items: [
+                { id: 501, text: "Conference paper printouts", packed: false, note: "" },
+                { id: 502, text: "Presenter notes", packed: false, note: "" },
+                { id: 503, text: "USB stick", packed: false, note: "Presentation backup" },
+                { id: 504, text: "HDMI / USB-C adaptor", packed: false, note: "For older projectors" },
+                { id: 505, text: "Presenter remote / clicker", packed: false, note: "" },
+                { id: 506, text: "Notebook + pens", packed: false, note: "" },
+                { id: 507, text: "Business cards", packed: false, note: "Very important" },
+                { id: 508, text: "Folder / Document organizer", packed: false, note: "" },
+                { id: 509, text: "Toyo Uni: Institutional documents", packed: false, note: "" },
+                { id: 510, text: "Gifts: Turkish delight, Bookmark", packed: false, note: "Small symbolic items" },
+              ]
+            },
+            {
+              id: 'cat6',
+              title: "6. Electronics",
+              items: [
+                { id: 601, text: "Laptop + charger", packed: false, note: "" },
+                { id: 602, text: "Tablet / iPad", packed: false, note: "Optional" },
+                { id: 603, text: "Kindle", packed: false, note: "For flights" },
+                { id: 604, text: "Noise-cancelling headphones", packed: false, note: "" },
+                { id: 605, text: "Portable WiFi / eSIM", packed: false, note: "" },
+                { id: 606, text: "Extra USB cables", packed: false, note: "" },
+                { id: 607, text: "Camera", packed: false, note: "Optional" },
+                { id: 608, text: "Power bank", packed: false, note: "Essential backup" },
+              ]
+            },
+            {
+              id: 'cat7',
+              title: "7. Health & Comfort Items",
+              items: [
+                { id: 701, text: "Melatonin", packed: false, note: "For jet lag" },
+                { id: 702, text: "Eye mask & Travel pillow", packed: false, note: "" },
+                { id: 703, text: "Compression socks", packed: false, note: "12h flight" },
+                { id: 704, text: "Reusable water bottle", packed: false, note: "" },
+                { id: 705, text: "Small backpack", packed: false, note: "For daily trips" },
+              ]
+            },
+            {
+              id: 'cat8',
+              title: "8. Japan-Specific Items",
+              items: [
+                { id: 801, text: "Cash in Yen", packed: false, note: "Cash based society" },
+                { id: 802, text: "Pocket tissues", packed: false, note: "Public toilets lack drying" },
+                { id: 803, text: "Coin purse", packed: false, note: "For many coins" },
+                { id: 804, text: "Reusable shopping bag", packed: false, note: "Paid bags law" },
+                { id: 805, text: "Suica/PASMO card", packed: false, note: "If owned" },
+                { id: 806, text: "Google Translate (Offline)", packed: false, note: "Downloaded" },
+              ]
+            },
+            {
+              id: 'cat9',
+              title: "9. Optional But Very Useful",
+              items: [
+                { id: 901, text: "Laundry detergent strips", packed: false, note: "" },
+                { id: 902, text: "Lint roller", packed: false, note: "Conference outfit saver" },
+                { id: 903, text: "Mini sewing kit", packed: false, note: "" },
+                { id: 904, text: "Ziplock bags", packed: false, note: "" },
+                { id: 905, text: "Extra tote bag", packed: false, note: "For shopping" },
+                { id: 906, text: "Passport photocopies", packed: false, note: "Stored separately" },
+              ]
+            },
+            {
+              id: 'cat10',
+              title: "10. For Flights (Carry-on)",
+              items: [
+                { id: 1001, text: "Comfortable clothes", packed: false, note: "" },
+                { id: 1002, text: "Compression socks", packed: false, note: "Wear these" },
+                { id: 1003, text: "Moisturizer + lip balm", packed: false, note: "Cabin air is dry" },
+                { id: 1004, text: "Headphones", packed: false, note: "" },
+                { id: 1005, text: "Snacks", packed: false, note: "" },
+                { id: 1006, text: "Refillable bottle", packed: false, note: "Empty before security" },
+                { id: 1007, text: "Phone charger", packed: false, note: "" },
+                { id: 1008, text: "Medication", packed: false, note: "In carry-on" },
+                { id: 1009, text: "Book / Offline entertainment", packed: false, note: "" },
+              ]
+            }
+        ];
+
+        // --- Icon Component ---
+        // React wrapper for Lucide icons since we are using CDN
+        const Icon = ({ name, size = 20, className }) => {
+            const LucideIcon = lucide[name];
+            if (!LucideIcon) return null;
+            return <LucideIcon size={size} className={className} />;
+        };
+
+        const App = () => {
+            const [categories, setCategories] = useState([]);
+            const [newItemText, setNewItemText] = useState("");
+            const [activeCategory, setActiveCategory] = useState('cat1');
+            const [isSaving, setIsSaving] = useState(false);
+
+            // Load from LocalStorage on mount
+            useEffect(() => {
+                const savedData = localStorage.getItem('japan_packing_list');
+                if (savedData) {
+                    try {
+                        setCategories(JSON.parse(savedData));
+                    } catch (e) {
+                        console.error("Failed to parse saved list", e);
+                        setCategories(DEFAULT_CATEGORIES);
+                    }
+                } else {
+                    setCategories(DEFAULT_CATEGORIES);
+                }
+            }, []);
+
+            // Save to LocalStorage whenever categories change
+            const saveToLocal = (newCats) => {
+                setIsSaving(true);
+                localStorage.setItem('japan_packing_list', JSON.stringify(newCats));
+                setCategories(newCats);
+                // Fake small delay to show saving indicator
+                setTimeout(() => setIsSaving(false), 500);
+            };
+
+            const toggleItem = (catId, itemId) => {
+                const newCategories = categories.map(cat => {
+                    if (cat.id !== catId) return cat;
+                    return {
+                        ...cat,
+                        items: cat.items.map(item => 
+                            item.id === itemId ? { ...item, packed: !item.packed } : item
+                        )
+                    };
+                });
+                saveToLocal(newCategories);
+            };
+
+            const deleteItem = (catId, itemId) => {
+                const newCategories = categories.map(cat => {
+                    if (cat.id !== catId) return cat;
+                    return {
+                        ...cat,
+                        items: cat.items.filter(item => item.id !== itemId)
+                    };
+                });
+                saveToLocal(newCategories);
+            };
+
+            const addItem = () => {
+                if (!newItemText.trim()) return;
+                const newCategories = categories.map(cat => {
+                    if (cat.id !== activeCategory) return cat;
+                    return {
+                        ...cat,
+                        items: [...cat.items, { 
+                            id: Date.now(), 
+                            text: newItemText, 
+                            packed: false, 
+                            note: "Custom Item" 
+                        }]
+                    };
+                });
+                saveToLocal(newCategories);
+                setNewItemText("");
+            };
+
+            const resetList = () => {
+                if (confirm("Reset all checkboxes?")) {
+                    const newCategories = categories.map(cat => ({
+                        ...cat,
+                        items: cat.items.map(item => ({ ...item, packed: false }))
+                    }));
+                    saveToLocal(newCategories);
+                }
+            };
+
+            const totalItems = categories.reduce((acc, cat) => acc + cat.items.length, 0);
+            const packedItems = categories.reduce((acc, cat) => acc + cat.items.filter(i => i.packed).length, 0);
+            const progress = totalItems > 0 ? Math.round((packedItems / totalItems) * 100) : 0;
+
+            return (
+                <div className="min-h-screen bg-gray-50 text-gray-800 font-sans p-4 md:p-8">
+                    <div className="max-w-4xl mx-auto bg-white shadow-xl rounded-xl overflow-hidden">
+                        
+                        {/* Header */}
+                        <div className="bg-indigo-700 text-white p-6">
+                            <div className="flex justify-between items-center mb-4">
+                                <div>
+                                    <h1 className="text-2xl font-bold flex items-center gap-2">
+                                        <Icon name="Plane" className="h-6 w-6" />
+                                        Japan Academic Visit 2025
+                                    </h1>
+                                    <div className="flex items-center gap-2 text-indigo-200 text-sm mt-1">
+                                        <span>Ankara ➔ Tokyo</span>
+                                        <span>•</span>
+                                        <span className="flex items-center gap-1">
+                                            <Icon name="HardDrive" className="h-3 w-3" />
+                                            {isSaving ? "Saving..." : "Saved to Browser"}
+                                        </span>
+                                    </div>
+                                </div>
+                                <div className="bg-indigo-800 px-4 py-2 rounded-lg text-center">
+                                    <span className="block text-2xl font-bold">{progress}%</span>
+                                    <span className="text-xs uppercase opacity-75">Ready</span>
+                                </div>
+                            </div>
+
+                            {/* Progress Bar */}
+                            <div className="w-full bg-indigo-900 rounded-full h-2.5 mb-2">
+                                <div 
+                                    className="bg-green-400 h-2.5 rounded-full transition-all duration-500 ease-in-out" 
+                                    style={{ width: `${progress}%` }}
+                                ></div>
+                            </div>
+                            <div className="flex justify-between text-xs text-indigo-200">
+                                <span>{packedItems} Packed</span>
+                                <span>{totalItems - packedItems} Remaining</span>
+                            </div>
+                        </div>
+
+                        {/* Controls */}
+                        <div className="p-4 border-b bg-gray-50 flex flex-wrap gap-4 items-center justify-between sticky top-0 z-10 shadow-sm">
+                            <div className="flex gap-2 w-full md:w-auto">
+                                <select 
+                                    value={activeCategory} 
+                                    onChange={(e) => setActiveCategory(e.target.value)}
+                                    className="bg-white border border-gray-300 rounded-lg px-3 py-2 text-sm flex-grow focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                                >
+                                    {categories.map(cat => (
+                                        <option key={cat.id} value={cat.id}>{cat.title}</option>
+                                    ))}
+                                </select>
+                            </div>
+
+                            <div className="flex gap-2 w-full md:w-auto">
+                                <input 
+                                    type="text" 
+                                    placeholder="Add extra item..." 
+                                    className="flex-grow border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                                    value={newItemText}
+                                    onChange={(e) => setNewItemText(e.target.value)}
+                                    onKeyPress={(e) => e.key === 'Enter' && addItem()}
+                                />
+                                <button 
+                                    onClick={addItem}
+                                    className="bg-indigo-600 hover:bg-indigo-700 text-white p-2 rounded-lg transition-colors"
+                                >
+                                    <Icon name="Plus" size={20} />
+                                </button>
+                            </div>
+
+                            <button 
+                                onClick={resetList}
+                                className="text-gray-500 hover:text-red-500 p-2 rounded-lg transition-colors ml-auto md:ml-0"
+                                title="Reset Checklist"
+                            >
+                                <Icon name="RotateCcw" size={20} />
+                            </button>
+                        </div>
+
+                        {/* List Content */}
+                        <div className="p-6 space-y-8">
+                            {categories.map((cat) => (
+                                <div key={cat.id} className="border rounded-lg overflow-hidden mb-6">
+                                    <div className="bg-gray-100 px-4 py-3 border-b flex justify-between items-center">
+                                        <h3 className="font-semibold text-gray-700 flex items-center gap-2">
+                                            {cat.title}
+                                        </h3>
+                                        <span className="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded-full">
+                                            {cat.items.filter(i => i.packed).length}/{cat.items.length}
+                                        </span>
+                                    </div>
+                                    <div className="divide-y divide-gray-100">
+                                        {cat.items.map((item) => (
+                                            <div 
+                                                key={item.id} 
+                                                className={`p-4 flex items-start gap-4 transition-colors hover:bg-gray-50 ${item.packed ? 'bg-indigo-50/50' : 'bg-white'}`}
+                                            >
+                                                <div 
+                                                    onClick={() => toggleItem(cat.id, item.id)}
+                                                    className="cursor-pointer mt-1"
+                                                >
+                                                    <div className={`w-5 h-5 rounded border flex items-center justify-center transition-colors ${
+                                                        item.packed 
+                                                            ? 'bg-indigo-600 border-indigo-600 text-white' 
+                                                            : 'border-gray-300 bg-white text-transparent'
+                                                    }`}>
+                                                        <Icon name="Check" size={14} strokeWidth={3} />
+                                                    </div>
+                                                </div>
+                                                
+                                                <div 
+                                                    className="flex-grow cursor-pointer"
+                                                    onClick={() => toggleItem(cat.id, item.id)}
+                                                >
+                                                    <p className={`text-sm font-medium transition-all ${
+                                                        item.packed ? 'text-gray-400 line-through' : 'text-gray-800'
+                                                    }`}>
+                                                        {item.text}
+                                                    </p>
+                                                    {item.note && (
+                                                        <p className={`text-xs mt-1 ${item.packed ? 'text-gray-300' : 'text-orange-600'}`}>
+                                                            {item.note}
+                                                        </p>
+                                                    )}
+                                                </div>
+
+                                                <button 
+                                                    onClick={() => deleteItem(cat.id, item.id)}
+                                                    className="text-gray-300 hover:text-red-500 transition-colors p-1"
+                                                    title="Remove from list"
+                                                >
+                                                    <Icon name="Trash2" size={16} />
+                                                </button>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* Footer */}
+                        <div className="bg-gray-50 p-4 text-center text-xs text-gray-500 border-t">
+                            Prepared for Berkcan Köse (METU) • Dec 2025 Japan Trip
+                        </div>
+                    </div>
+                </div>
+            );
+        };
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
