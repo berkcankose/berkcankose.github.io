@@ -29,7 +29,7 @@ $sidebar-screen-min-width   : 1024px;
 /* Default light theme for the site */
 :root {
     --global-base-color                 : #{$gray};
-    --global-bg-color                   : #dde6db;
+    --global-bg-color                   : #fff;
     --global-border-color               : #{$lighter-gray};
     --global-code-background-color      : #fafafa;
     --global-code-text-color            : #{$darker-gray};
@@ -42,6 +42,8 @@ $sidebar-screen-min-width   : 1024px;
     --global-text-color                 : #{$dark-gray};
     --global-text-color-light           : #{$light-gray};
     --global-thead-color                : #{$lighter-gray};
-   
-
+   /* Custom Masthead Background */
+.masthead {
+  background-color: #dde6db;
+  border-bottom: 1px solid var(--global-border-color);
 }
