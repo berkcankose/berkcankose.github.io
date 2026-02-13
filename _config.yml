@@ -131,7 +131,7 @@ yandex_site_verification :
 
 # Social Sharing
 twitter:
-  username               : &twitter
+  username               : berkcan_kose
 facebook:
   username               :
   app_id                 :
@@ -308,16 +308,6 @@ plugins:
   - jekyll-sitemap
 
 
-# Mimic GitHub Pages with --safe
-whitelist:
-  - jekyll-feed
-  - jekyll-gist
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-redirect-from
-  - jemoji
-
-
 # Archives
 #  Type
 #  - GitHub Pages compatible archive pages built with Liquid ~> type: liquid (default)
@@ -354,5 +344,5 @@ compress_html:
   ignore:
     envs: development
 
-robots: noindex
+robots: index, follow
 
