@@ -91,12 +91,5 @@ redirect_from:
 footer .sitemap {
   display: none !important;
 }
-
-.sidebar .social-icons .fa-x-twitter::after {
-  content: "X" !important;
-  font-weight: normal;
-  font-size: 14px;
-  margin-left: 4px;
-}
 </style>
 <a href="#" id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">↑</a>
