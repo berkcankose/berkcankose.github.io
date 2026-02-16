@@ -44,8 +44,8 @@ html[data-theme="dark"] {
     --global-link-color                 : #{$link};
     --global-link-color-hover           : #{$link-dark};
     --global-link-color-visited         : #{$link-light};
-    --global-masthead-link-color        : #{$text};
-    --global-masthead-link-color-hover  : #{$background-light};
+    --global-masthead-link-color        : #{$dark-gray};
+    --global-masthead-link-color-hover  : mix(#000, #{$dark-gray}, 25%);
     --global-text-color                 : #{$text};
     --global-text-color-light           : #{$light-gray};
     --global-thead-color                : #{$background-lighter};
