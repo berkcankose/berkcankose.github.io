@@ -338,3 +338,35 @@ h1, h2, h3, h4, h5, h6 {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* Floating back-to-top control
+   Keep the control fully inside the viewport at the end of long pages. */
+#back-to-top {
+  position: fixed !important;
+  right: 24px;
+  bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: #555;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 24px;
+  line-height: 1;
+  text-decoration: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, transform 0.18s ease;
+}
+
+#back-to-top:hover {
+  background-color: #333;
+  transform: translateY(-1px);
+}
