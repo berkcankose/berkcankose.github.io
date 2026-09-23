@@ -6,96 +6,152 @@ author_profile: false
 ---
 
 <style>
-  .resources-main {
-    margin-top: 2.5rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
   .resources-page {
-    float: none;
-    width: 100%;
-    max-width: 1180px;
-    margin: 0 auto;
+    padding-bottom: 3rem;
   }
 
-  .resources-page .page__content h2 {
-    margin: 0 0 0.9rem;
-    padding: 0;
-    border: 0;
+  .resources-page .page__content {
+    padding-top: 0.25rem;
+  }
+
+  .resources-intro {
+    margin-bottom: 2rem;
+  }
+
+  .resources-intro h1 {
+    margin: 0 0 0.7rem;
     font-size: clamp(2rem, 3vw, 2.65rem);
+    line-height: 1.08;
     letter-spacing: -0.025em;
   }
 
-  .resources-page .page__content > p:first-of-type {
-    max-width: 760px;
-    margin-bottom: 3rem;
-    color: var(--global-text-color-light);
-    font-size: 1.02rem;
-    line-height: 1.75;
+  .resources-intro p {
+    max-width: 850px;
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--global-text-color);
   }
 
-  .resources-page .page__content > p:first-of-type a {
+  .resources-intro a {
     text-underline-offset: 3px;
   }
 
+  .resources-toolbar {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin: 0 0 0.75rem;
+    font-family: $sans-serif;
+    font-size: 0.78rem;
+  }
+
+  .resources-toolbar button {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--global-text-color-light);
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+  }
+
+  .resources-toolbar button:hover {
+    color: var(--global-link-color);
+  }
+
   .corpus-category {
-    margin: 0 0 3.25rem;
+    margin: 0 0 0.65rem;
+    border: 1px solid var(--global-border-color);
+    border-radius: 10px;
+    background: var(--global-bg-color);
+    overflow: hidden;
+  }
+
+  .corpus-category summary {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    min-height: 64px;
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .corpus-category summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .corpus-category__number {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    flex: 0 0 34px;
+    border-radius: 50%;
+    background: #edf2eb;
+    color: var(--global-text-color);
+    font-family: $sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
   }
 
   .corpus-category__title {
-    display: flex;
-    align-items: baseline;
-    gap: 0.8rem;
-    margin: 0 0 1rem;
-    padding-bottom: 0.65rem;
-    border-bottom: 1px solid var(--global-border-color);
-    font-size: 1.05rem;
+    flex: 1;
+    margin: 0;
+    color: var(--global-text-color);
+    font-family: $sans-serif;
+    font-size: 1rem;
     font-weight: 700;
-    letter-spacing: 0.01em;
+    line-height: 1.3;
   }
 
-  .corpus-category__title::before {
-    content: "";
-    width: 0.42rem;
-    height: 0.42rem;
-    flex: 0 0 0.42rem;
-    border-radius: 50%;
-    background: var(--global-link-color);
+  .corpus-category__chevron {
+    width: 9px;
+    height: 9px;
+    margin-right: 0.25rem;
+    border-right: 1.5px solid var(--global-text-color-light);
+    border-bottom: 1.5px solid var(--global-text-color-light);
+    transform: rotate(45deg) translateY(-2px);
+    transition: transform 0.18s ease;
+  }
+
+  .corpus-category[open] .corpus-category__chevron {
+    transform: rotate(225deg) translate(-1px, -1px);
+  }
+
+  .corpus-category__body {
+    padding: 0 0.75rem 0.75rem;
+    border-top: 1px solid var(--global-border-color);
   }
 
   .corpus-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.85rem;
+    gap: 0.55rem;
+    padding-top: 0.75rem;
   }
 
   .resource-card {
     min-width: 0;
     border: 1px solid var(--global-border-color);
-    border-radius: 10px;
+    border-radius: 8px;
     background: var(--global-bg-color);
-    transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+    overflow: hidden;
+    transition: border-color 0.18s ease, box-shadow 0.18s ease;
   }
 
   .resource-card:hover {
-    border-color: color-mix(in srgb, var(--global-link-color) 35%, var(--global-border-color));
-    box-shadow: 0 7px 22px rgba(0, 0, 0, 0.055);
-    transform: translateY(-1px);
-  }
-
-  .resource-card[open] {
-    border-color: color-mix(in srgb, var(--global-link-color) 45%, var(--global-border-color));
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    border-color: color-mix(in srgb, var(--global-link-color) 32%, var(--global-border-color));
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.045);
   }
 
   .resource-card summary {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    min-height: 76px;
-    padding: 1rem 1.1rem;
+    gap: 0.75rem;
+    min-height: 62px;
+    padding: 0.8rem 0.9rem;
     cursor: pointer;
     list-style: none;
   }
@@ -104,156 +160,131 @@ author_profile: false
     display: none;
   }
 
-  .resource-card__main {
-    min-width: 0;
-  }
-
   .resource-card__name {
-    display: block;
-    margin-bottom: 0.2rem;
+    flex: 1;
     color: var(--global-text-color);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    font-size: 1rem;
+    font-family: $sans-serif;
+    font-size: 0.9rem;
     font-weight: 700;
     line-height: 1.35;
   }
 
-  .resource-card__availability {
-    display: inline-block;
+  .resource-card__external {
+    flex: 0 0 auto;
     color: var(--global-text-color-light);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    font-size: 0.76rem;
-    line-height: 1.2;
-  }
-
-  .resource-card__icon {
-    display: grid;
-    place-items: center;
-    width: 28px;
-    height: 28px;
-    flex: 0 0 28px;
-    border: 1px solid var(--global-border-color);
-    border-radius: 50%;
-    color: var(--global-text-color-light);
-    font-size: 1.05rem;
+    font-size: 0.95rem;
     line-height: 1;
-    transition: transform 0.18s ease, color 0.18s ease, border-color 0.18s ease;
-  }
-
-  .resource-card__icon::before {
-    content: "+";
-    transform: translateY(-1px);
-  }
-
-  .resource-card[open] .resource-card__icon {
-    transform: rotate(45deg);
-    color: var(--global-link-color);
-    border-color: color-mix(in srgb, var(--global-link-color) 45%, var(--global-border-color));
   }
 
   .resource-card__body {
-    padding: 0 1.1rem 1.1rem;
+    padding: 0.8rem 0.9rem 0.9rem;
     border-top: 1px solid var(--global-border-color);
   }
 
   .resource-card__note {
-    margin: 1rem 0 0.85rem;
+    margin: 0 0 0.7rem;
     color: var(--global-text-color);
-    font-size: 0.94rem;
-    line-height: 1.65;
+    font-size: 0.84rem;
+    line-height: 1.6;
   }
 
   .resource-card__link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    font-size: 0.83rem;
+    font-family: $sans-serif;
+    font-size: 0.78rem;
     font-weight: 700;
-  }
-
-  .resource-card__link::after {
-    content: "↗";
-    font-size: 0.9rem;
   }
 
   .resource-card__link a {
     text-decoration: none;
   }
 
-  .resources-page .muted {
-    margin-top: 0.5rem;
-    padding-top: 1.25rem;
+  .resource-card__link a::after {
+    content: " ↗";
+  }
+
+  .resources-note {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
     border-top: 1px solid var(--global-border-color);
     color: var(--global-text-color-light);
+    font-size: 0.8rem;
+    line-height: 1.6;
   }
 
   @media (max-width: 760px) {
-    .resources-main {
-      margin-top: 1.5rem;
-    }
-
-    .resources-page .page__content > p:first-of-type {
-      margin-bottom: 2.2rem;
+    .resources-toolbar {
+      justify-content: flex-start;
     }
 
     .corpus-grid {
       grid-template-columns: 1fr;
     }
 
-    .corpus-category {
-      margin-bottom: 2.5rem;
-    }
-
-    .resource-card summary {
-      min-height: 70px;
-      padding: 0.9rem 1rem;
-    }
-
-    .resource-card__body {
-      padding: 0 1rem 1rem;
+    .corpus-category summary {
+      min-height: 60px;
     }
   }
 </style>
 
 <section id="corpus-resources">
-  <h2>Corpus Resources</h2>
-  <p>Curated links to corpora, concordancers, and tools for corpus-informed teaching and research. Adapted from the 
-    <a href="https://corpus.eduhk.hk/cap/corpus-resources/" target="_blank" rel="noopener">Corpus-Aided Platform (CAP)</a> at EdUHK.</p>
+  <div class="resources-intro">
+    <h1>Corpus Resources</h1>
+    <p>Curated links to corpora, concordancers, and tools for corpus-informed teaching and research. Adapted from the 
+      <a href="https://corpus.eduhk.hk/cap/corpus-resources/" target="_blank" rel="noopener">Corpus-Aided Platform (CAP)</a> at EdUHK.</p>
+  </div>
+
+  <div class="resources-toolbar" aria-label="Resource category controls">
+    <button type="button" id="expand-resources">Expand all&nbsp; +</button>
+    <button type="button" id="collapse-resources">Collapse all&nbsp; −</button>
+  </div>
 
   {% for cat in site.data.corpus_resources.categories %}
-    <section class="corpus-category">
-      <h3 class="corpus-category__title">{{ cat.title }}</h3>
+    <details class="corpus-category"{% if forloop.first %} open{% endif %}>
+      <summary>
+        <span class="corpus-category__number">{{ forloop.index | prepend: '0' }}</span>
+        <span class="corpus-category__title">{{ cat.title }}</span>
+        <span class="corpus-category__chevron" aria-hidden="true"></span>
+      </summary>
 
-      <div class="corpus-grid">
-        {% for item in cat.items %}
-          <details class="resource-card">
-            <summary>
-              <span class="resource-card__main">
+      <div class="corpus-category__body">
+        <div class="corpus-grid">
+          {% for item in cat.items %}
+            <details class="resource-card">
+              <summary>
                 <span class="resource-card__name">{{ item.name }}</span>
-                {% if item.availability %}
-                  <span class="resource-card__availability">{{ item.availability }}</span>
+                <span class="resource-card__external" aria-hidden="true">↗</span>
+              </summary>
+              <div class="resource-card__body">
+                {% if item.note %}
+                  <p class="resource-card__note">{{ item.note }}</p>
                 {% endif %}
-              </span>
-              <span class="resource-card__icon" aria-hidden="true"></span>
-            </summary>
-
-            <div class="resource-card__body">
-              {% if item.note %}
-                <p class="resource-card__note">{{ item.note }}</p>
-              {% endif %}
-              <p class="resource-card__link">
-                <a href="{{ item.url }}" target="_blank" rel="noopener">Visit resource</a>
-              </p>
-            </div>
-          </details>
-        {% endfor %}
+                <p class="resource-card__link">
+                  <a href="{{ item.url }}" target="_blank" rel="noopener">Visit resource</a>
+                </p>
+              </div>
+            </details>
+          {% endfor %}
+        </div>
       </div>
-    </section>
+    </details>
   {% endfor %}
 
-  <p class="muted" style="font-size:0.9em">
-    Notes are brief summaries; please see each site for full details. Last updated: {{ site.time | date: "%Y-%m-%d" }}.
-  </p>
+  <p class="resources-note">Notes are brief summaries; please see each site for full details.</p>
 </section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const categories = Array.from(document.querySelectorAll(".corpus-category"));
+    const cards = Array.from(document.querySelectorAll(".resource-card"));
+
+    document.getElementById("expand-resources")?.addEventListener("click", function () {
+      categories.forEach((category) => category.open = true);
+    });
+
+    document.getElementById("collapse-resources")?.addEventListener("click", function () {
+      categories.forEach((category) => category.open = false);
+      cards.forEach((card) => card.open = false);
+    });
+  });
+</script>
