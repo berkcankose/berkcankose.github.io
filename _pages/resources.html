@@ -19,7 +19,7 @@ author_profile: true
   }
 
   .resources-intro h1 {
-    margin: 0 0 0.7rem;
+    margin: 0 0 0.45rem;
     font-size: clamp(2rem, 3vw, 2.65rem);
     line-height: 1.08;
     letter-spacing: -0.025em;
@@ -128,8 +128,13 @@ author_profile: true
   .corpus-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
     gap: 0.45rem;
     padding-top: 0.6rem;
+  }
+
+  .resource-card {
+    align-self: start;
   }
 
   .resource-card {
@@ -149,8 +154,8 @@ author_profile: true
   .resource-card summary {
     display: flex;
     align-items: center;
-    min-height: 46px;
-    padding: 0.55rem 0.75rem;
+    min-height: 50px;
+    padding: 0.6rem 0.75rem;
     cursor: pointer;
     list-style: none;
   }
@@ -169,21 +174,21 @@ author_profile: true
   }
 
   .resource-card__body {
-    padding: 0.7rem 0.75rem 0.75rem;
+    padding: 0.55rem 0.75rem 0.65rem;
     border-top: 1px solid var(--global-border-color);
   }
 
   .resource-card__note {
     margin: 0 0 0.7rem;
     color: var(--global-text-color);
-    font-size: 0.84rem;
-    line-height: 1.6;
+    font-size: 0.72rem;
+    line-height: 1.45;
   }
 
   .resource-card__link {
     margin: 0;
     font-family: $sans-serif;
-    font-size: 0.78rem;
+    font-size: 0.74rem;
     font-weight: 700;
   }
 
@@ -219,7 +224,7 @@ author_profile: true
   </div>
 
   {% for cat in site.data.corpus_resources.categories %}
-    <details class="corpus-category"{% if forloop.first %} open{% endif %}>
+    <details class="corpus-category">
       <summary>
         <span class="corpus-category__number">{{ forloop.index | prepend: '0' }}</span>
         <span class="corpus-category__title">{{ cat.title }}</span>
