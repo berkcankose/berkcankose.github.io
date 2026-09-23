@@ -7,67 +7,250 @@ author_profile: true
 
 {% include base_path %}
 
-<div style="text-align: justify;">
+<style>
+  .research-page {
+    --research-accent: var(--global-link-color);
+    --research-border: var(--global-border-color);
+    --research-muted: var(--global-text-color-light);
+  }
 
-<h2>Research Interests</h2>
-<ul>
-  <li>English-medium instruction (EMI)</li>
-  <li>Corpus linguistics</li>
-  <li>Language teacher education</li>
-  <li>Technology integration in ELT</li>
-  <li>Classroom Interaction</li>
-  <li>Discourse Analysis</li>
-</ul>
+  .research-page section {
+    margin-bottom: 3.2rem;
+  }
 
-<hr style="border: 0; height: 1px; background: #e0e0e0; margin-bottom: 2rem;">
+  .research-page h2 {
+    margin: 0 0 1.15rem;
+    padding: 0;
+    border: 0;
+    font-size: 1.3rem;
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+  }
 
-<h2>Research Articles</h2>
-<ul>
-  <li>
-    <strong>Köse, B.,</strong> & Kuru Gönen, S. İ. (2023). Training on using corpora in EFL classrooms: Perceptions of pre-service teachers. <em>Manisa Celal Bayar Üniversitesi Sosyal Bilimler Dergisi</em>, 21(4), 259–278. 
-    <a href="https://doi.org/10.18026/cbayarsos.1309293" target="_blank" title="Go to DOI">🔗</a>
-    <a href="https://doi.org/10.18026/cbayarsos.1309293" target="_blank" title="Download PDF">📄</a>
-  </li>
-</ul>
+  .research-interests {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.6rem;
+  }
 
-<hr style="border: 0; height: 1px; background: #e0e0e0; margin-bottom: 2rem;">
+  .research-interest {
+    padding: 0.75rem 0.85rem;
+    border: 1px solid var(--research-border);
+    border-radius: 8px;
+    font-size: 0.86rem;
+    font-weight: 700;
+    line-height: 1.35;
+  }
 
-<h2>Conference Presentations & Proceedings</h2>
-<ul>
-  
-  <ol>
-  <li><strong>Köse, B.,</strong> & Kuru Gönen, S. İ.(2026, July). Bridging the Gap: Integrating Corpus Linguistics into Pre-service EFL Teacher Training. Paper presented at the 17th International Teaching and Language Corpora Conference (TaLC 2026), Jarandilla de la Vera, Cáceres, Spain.</li>
-  <li>Anaç, A., Kırmızı, G., <strong>Köse, B.,</strong> &amp; Eröz, B. (2026, May). Exploring Researcher Identity Construction through Undergraduate Research Experiences. Paper presented at 16th METU International ELT Convention, Ankara, Turkey.</li>
-  <li><strong>Köse, B.,</strong> Yüce, M. N., &amp; Sevimli, S. (2025, December). Shared Struggles to Discipline-Specific Needs: Student Voices on EMI from a Turkish Context. Paper presented at the 8th JAAL in JACET (Japan Association for Applied Linguistics, Osaka, Japan.</li>
-  <li>Işık Güler, H., Turan, P., Şimşek Tontuş, A., &amp; <strong>Köse, B.</strong> (2025, July). The Empirical Underpinnings of the English-Medium Instruction Training for Faculty (EMIT4F) Project: Designing a New Data-Driven Training Programme. Paper presented at the 6th English-Medium Instruction Symposium, Oxford, England.</li>
-  <li>Kırmızı, G., &amp; <strong>Köse, B.</strong> (2025, April). Exploring the Interrelationship of Emotion Regulation, Teacher Resilience, and Work Engagement among Pre-Service EFL Teachers in a Turkish University Context. Paper presented at the 22nd INGED International ELT Conference, Bolu, Turkey.</li>
-  <li><strong>Köse, B.,</strong> &amp; Kuru Gönen, S. İ. (2025, April). Fostering Corpus Literacy: Rethinking Pre-Service EFL Teacher Training for Future-Proof Classrooms. Paper presented at the 6th TESOL Türkiye International ELT Conference, Kayseri, Turkey.
-  <li>Işık Güler, H., Turan, P., Şimşek Tontuş, A., & <strong>Köse, B.</strong> (2024, November). Developing an EMI classroom interactions corpus: Feedback from and feedforward to EAP. Paper presented at the 6th International English for Specific Purposes Conference, Ankara, Turkey.</li>
-  <li>Kırmızı, G., & <strong>Köse, B.</strong> (2024, May). "I Am a Perfectionist, Raised to Be One!": Navigating the Inner Landscape of Turkish EFL Teachers. Paper presented at the 15th METU International ELT Convention, Ankara, Turkey.</li>
-  <li><strong>Köse, B.,</strong> & Kuru Gönen, S. İ. (2024, May). From Concept to Classroom: Designing a Corpus-based Language Teaching Training. Paper presented at the 15th METU International ELT Convention, Ankara, Turkey.</li>
-  <li>Kırmızı, G., & <strong>Köse, B.</strong> (2023, November). The Labyrinth of Emotions: Foreign Language Teaching Anxiety and Perfectionism among Pre-Service EFL Teachers. Paper presented at the 21st INGED International ELT Conference, Kayseri, Turkey.</li>
-  <li>Yalçın, Ş., Işık Güler, H., Kurt, Y., Şimşek Tontuş, A., & <strong>Köse, B.</strong> (2023, September–October). Designing a Data-Driven EMI Questionnaire: Lecturer and Student Perspectives. Paper presented at the Free Linguistic Conference (FLC2023), İstanbul, Turkey.</li>
-</ul>
+  .research-publication,
+  .research-project,
+  .research-initiative,
+  .research-timeline__card {
+    border: 1px solid var(--research-border);
+    border-radius: 8px;
+    background: var(--global-bg-color);
+  }
 
-<hr style="border: 0; height: 1px; background: #e0e0e0; margin-bottom: 2rem;">
-<h2>Research Projects</h2>
+  .research-publication {
+    padding: 1rem 1.1rem;
+  }
 
-<ul>
-  <li>
-    <strong>Developing an In-Service Training Framework for Faculty Members in English-Medium Universities (TÜBİTAK 1001, Project No. 121K227)</strong><br>
-    <em>Researcher (Scholarship Holder) · 2021–2025</em><br>
-    A TÜBİTAK-funded project focused on developing a data-driven in-service training framework for faculty members in English-medium universities. My contributions included collecting and analysing approximately 150 hours of multimodal EMI classroom interaction data, preparing detailed transcriptions, developing and administering surveys, conducting qualitative and quantitative analyses, and contributing to the development of the EMIT4F training programme and MOOC modules.
-    <a href="https://emi.metu.edu.tr/tr/tubitak-1001-121k227" target="_blank" title="Project Website">🔗</a>
-  </li>
-</ul>
+  .research-label,
+  .research-timeline__meta {
+    margin-bottom: 0.4rem;
+    color: var(--research-accent);
+    font-family: $sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.055em;
+    text-transform: uppercase;
+  }
 
-<hr style="border: 0; height: 1px; background: #e0e0e0; margin-bottom: 2rem;">
-<h2>Research Groups and Other Initiatives</h2> 
-<ul> 
-  <li>METU FLE ELT Talks Team (2023–ongoing)</li> 
-  <li>ESP Conference Organization Committee (2023)</li> 
-  <li>Corpus-informed teacher training initiatives</li> 
-</ul>
+  .research-publication__citation,
+  .research-timeline__citation {
+    margin: 0;
+    font-size: 0.89rem;
+    line-height: 1.62;
+  }
+
+  .research-links {
+    display: flex;
+    gap: 0.7rem;
+    margin-top: 0.75rem;
+    font-family: $sans-serif;
+    font-size: 0.76rem;
+    font-weight: 700;
+  }
+
+  .research-links a,
+  .research-project__link {
+    text-decoration: none;
+  }
+
+  .research-timeline {
+    position: relative;
+    margin-left: 0.35rem;
+    padding-left: 1.55rem;
+    border-left: 1px solid var(--research-border);
+  }
+
+  .research-timeline__item {
+    position: relative;
+    margin-bottom: 0.8rem;
+    padding-left: 0.3rem;
+  }
+
+  .research-timeline__item:last-child {
+    margin-bottom: 0;
+  }
+
+  .research-timeline__item::before {
+    content: "";
+    position: absolute;
+    top: 0.9rem;
+    left: -1.91rem;
+    width: 7px;
+    height: 7px;
+    border: 2px solid var(--global-bg-color);
+    border-radius: 50%;
+    background: var(--research-accent);
+    box-shadow: 0 0 0 1px var(--research-accent);
+  }
+
+  .research-timeline__card {
+    padding: 0.85rem 0.95rem;
+  }
+
+  .research-project {
+    padding: 1.1rem 1.15rem;
+  }
+
+  .research-project__title {
+    margin: 0 0 0.35rem;
+    font-family: $sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.45;
+  }
+
+  .research-project__role {
+    margin: 0 0 0.75rem;
+    color: var(--research-muted);
+    font-size: 0.8rem;
+  }
+
+  .research-project__description {
+    margin: 0;
+    font-size: 0.87rem;
+    line-height: 1.65;
+  }
+
+  .research-project__link {
+    display: inline-block;
+    margin-top: 0.8rem;
+    font-family: $sans-serif;
+    font-size: 0.76rem;
+    font-weight: 700;
+  }
+
+  .research-initiatives {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.6rem;
+  }
+
+  .research-initiative {
+    padding: 0.8rem 0.9rem;
+    font-size: 0.83rem;
+    line-height: 1.45;
+  }
+
+  @media (max-width: 850px) {
+    .research-interests,
+    .research-initiatives {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 600px) {
+    .research-interests,
+    .research-initiatives {
+      grid-template-columns: 1fr;
+    }
+
+    .research-timeline {
+      margin-left: 0.2rem;
+      padding-left: 1.25rem;
+    }
+
+    .research-timeline__item::before {
+      left: -1.61rem;
+    }
+  }
+</style>
+
+<div class="research-page">
+
+  <section>
+    <h2>Research Interests</h2>
+    <div class="research-interests">
+      <div class="research-interest">English-medium instruction (EMI)</div>
+      <div class="research-interest">Corpus linguistics</div>
+      <div class="research-interest">Language teacher education</div>
+      <div class="research-interest">Technology integration in ELT</div>
+      <div class="research-interest">Classroom Interaction</div>
+      <div class="research-interest">Discourse Analysis</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Research Articles</h2>
+    <article class="research-publication">
+      <div class="research-label">Journal article</div>
+      <p class="research-publication__citation"><strong>Köse, B.,</strong> & Kuru Gönen, S. İ. (2023). Training on using corpora in EFL classrooms: Perceptions of pre-service teachers. <em>Manisa Celal Bayar Üniversitesi Sosyal Bilimler Dergisi</em>, 21(4), 259–278.</p>
+      <div class="research-links">
+        <a href="https://doi.org/10.18026/cbayarsos.1309293" target="_blank" rel="noopener">DOI</a>
+        <a href="https://doi.org/10.18026/cbayarsos.1309293" target="_blank" rel="noopener">PDF</a>
+      </div>
+    </article>
+  </section>
+
+  <section>
+    <h2>Conference Presentations &amp; Proceedings</h2>
+    <div class="research-timeline">
+      <article class="research-timeline__item"><div class="research-timeline__card"><div class="research-timeline__meta">2026 · July</div><p class="research-timeline__citation"><strong>Köse, B.,</strong> & Kuru Gönen, S. İ.(2026, July). Bridging the Gap: Integrating Corpus Linguistics into Pre-service EFL Teacher Training. Paper presented at the 17th International Teaching and Language Corpora Conference (TaLC 2026), Jarandilla de la Vera, Cáceres, Spain.</p></div></article>
+      <article class="research-timeline__item"><div class="research-timeline__card"><div class="research-timeline__meta">2026 · May</div><p class="research-timeline__citation">Anaç, A., Kırmızı, G., <strong>Köse, B.,</strong> &amp; Eröz, B. (2026, May). Exploring Researcher Identity Construction through Undergraduate Research Experiences. Paper presented at 16th METU International ELT Convention, Ankara, Turkey.</p></div></article>
+      <article class="research-timeline__item"><div class="research-timeline__card"><div class="research-timeline__meta">2025 · December</div><p class="research-timeline__citation"><strong>Köse, B.,</strong> Yüce, M. N., &amp; Sevimli, S. (2025, December). Shared Struggles to Discipline-Specific Needs: Student Voices on EMI from a Turkish Context. Paper presented at the 8th JAAL in JACET (Japan Association for Applied Linguistics, Osaka, Japan.</p></div></article>
+      <article class="research-timeline__item"><div class="research-timeline__card"><div class="research-timeline__meta">2025 · July</div><p class="research-timeline__citation">Işık Güler, H., Turan, P., Şimşek Tontuş, A., &amp; <strong>Köse, B.</strong> (2025, July). The Empirical Underpinnings of the English-Medium Instruction Training for Faculty (EMIT4F) Project: Designing a New Data-Driven Training Programme. Paper presented at the 6th English-Medium Instruction Symposium, Oxford, England.</p></div></article>
+      <article class="research-timeline__item"><div class="research-timeline__card"><div class="research-timeline__meta">2025 · April</div><p class="research-timeline__citation">Kırmızı, G., &amp; <strong>Köse, B.</strong> (2025, April). Exploring the Interrelationship of Emotion Regulation, Teacher Resilience, and Work Engagement among Pre-Service EFL Teachers in a Turkish University Context. Paper presented at the 22nd INGED International ELT Conference, Bolu, Turkey.</p></div></article>
+      <article class="research-timeline__item"><div class="research-timeline__card"><div class="research-timeline__meta">2025 · April</div><p class="research-timeline__citation"><strong>Köse, B.,</strong> &amp; Kuru Gönen, S. İ. (2025, April). Fostering Corpus Literacy: Rethinking Pre-Service EFL Teacher Training for Future-Proof Classrooms. Paper presented at the 6th TESOL Türkiye International ELT Conference, Kayseri, Turkey.
+  <li>Işık Güler, H., Turan, P., Şimşek Tontuş, A., & <strong>Köse, B.</strong> (2024, November). Developing an EMI classroom interactions corpus: Feedback from and feedforward to EAP. Paper presented at the 6th International English for Specific Purposes Conference, Ankara, Turkey.</p></div></article>
+      <article class="research-timeline__item"><div class="research-timeline__card"><div class="research-timeline__meta">2024 · November</div><p class="research-timeline__citation">Kırmızı, G., & <strong>Köse, B.</strong> (2024, May). "I Am a Perfectionist, Raised to Be One!": Navigating the Inner Landscape of Turkish EFL Teachers. Paper presented at the 15th METU International ELT Convention, Ankara, Turkey.</p></div></article>
+      <article class="research-timeline__item"><div class="research-timeline__card"><div class="research-timeline__meta">2024 · May</div><p class="research-timeline__citation"><strong>Köse, B.,</strong> & Kuru Gönen, S. İ. (2024, May). From Concept to Classroom: Designing a Corpus-based Language Teaching Training. Paper presented at the 15th METU International ELT Convention, Ankara, Turkey.</p></div></article>
+      <article class="research-timeline__item"><div class="research-timeline__card"><div class="research-timeline__meta">2024 · May</div><p class="research-timeline__citation">Kırmızı, G., & <strong>Köse, B.</strong> (2023, November). The Labyrinth of Emotions: Foreign Language Teaching Anxiety and Perfectionism among Pre-Service EFL Teachers. Paper presented at the 21st INGED International ELT Conference, Kayseri, Turkey.</p></div></article>
+      <article class="research-timeline__item"><div class="research-timeline__card"><div class="research-timeline__meta">2023 · November</div><p class="research-timeline__citation">Yalçın, Ş., Işık Güler, H., Kurt, Y., Şimşek Tontuş, A., & <strong>Köse, B.</strong> (2023, September–October). Designing a Data-Driven EMI Questionnaire: Lecturer and Student Perspectives. Paper presented at the Free Linguistic Conference (FLC2023), İstanbul, Turkey.</p></div></article>
+    </div>
+  </section>
+
+  <section>
+    <h2>Research Projects</h2>
+    <article class="research-project">
+      <p class="research-project__title"><strong>Developing an In-Service Training Framework for Faculty Members in English-Medium Universities (TÜBİTAK 1001, Project No. 121K227)</strong></p>
+      <p class="research-project__role"><em>Researcher (Scholarship Holder) · 2021–2025</em></p>
+      <p class="research-project__description">A TÜBİTAK-funded project focused on developing a data-driven in-service training framework for faculty members in English-medium universities. My contributions included collecting and analysing approximately 150 hours of multimodal EMI classroom interaction data, preparing detailed transcriptions, developing and administering surveys, conducting qualitative and quantitative analyses, and contributing to the development of the EMIT4F training programme and MOOC modules.</p>
+      <a class="research-project__link" href="https://emi.metu.edu.tr/tr/tubitak-1001-121k227" target="_blank" rel="noopener">Project Website</a>
+    </article>
+  </section>
+
+  <section>
+    <h2>Research Groups and Other Initiatives</h2>
+    <div class="research-initiatives">
+      <div class="research-initiative">METU FLE ELT Talks Team (2023–ongoing)</div>
+      <div class="research-initiative">ESP Conference Organization Committee (2023)</div>
+      <div class="research-initiative">Corpus-informed teacher training initiatives</div>
+    </div>
+  </section>
+
 </div>
 
 <!-- Floating Back to Top Button -->
@@ -92,7 +275,6 @@ author_profile: true
 #back-to-top:hover {
   background-color: #333;
 }
-
 footer .sitemap {
   display: none !important;
 }
