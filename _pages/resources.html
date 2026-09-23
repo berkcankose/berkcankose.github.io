@@ -1,63 +1,219 @@
 ---
-layout: single
+layout: resources
 title: Corpus Resources
 permalink: /resources/
-author_profile: true
+author_profile: false
 ---
 
 <style>
-  /* ===== Corpus Resources table ===== */
-  .corpus-table-wrapper { margin: 1.25rem 0 2.5rem; }
-  .corpus-table { width: 100%; border-collapse: collapse; }
-  .corpus-table thead th {
-    background: #e7f3e7; /* soft green tint like the example */
-    color: #185c18;
-    font-weight: 700; 
-    text-align: left;
-    padding: .9rem .8rem;
-    border-bottom: 2px solid #cfe6cf;
+  .resources-main {
+    margin-top: 2.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
-  .corpus-table tbody td {
-    vertical-align: top;
-    padding: 1rem .8rem;
-    border-bottom: 1px solid #eee;
-  }
-  .corpus-table tbody tr:nth-child(even) td { background: #fafafa; }
 
-  /* Category separator row */
-  .corpus-cat-row td {
-    background: #f2f6f2;
-    color: #185c18;
+  .resources-page {
+    float: none;
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+
+  .resources-page .page__content h2 {
+    margin: 0 0 0.9rem;
+    padding: 0;
+    border: 0;
+    font-size: clamp(2rem, 3vw, 2.65rem);
+    letter-spacing: -0.025em;
+  }
+
+  .resources-page .page__content > p:first-of-type {
+    max-width: 760px;
+    margin-bottom: 3rem;
+    color: var(--global-text-color-light);
+    font-size: 1.02rem;
+    line-height: 1.75;
+  }
+
+  .resources-page .page__content > p:first-of-type a {
+    text-underline-offset: 3px;
+  }
+
+  .corpus-category {
+    margin: 0 0 3.25rem;
+  }
+
+  .corpus-category__title {
+    display: flex;
+    align-items: baseline;
+    gap: 0.8rem;
+    margin: 0 0 1rem;
+    padding-bottom: 0.65rem;
+    border-bottom: 1px solid var(--global-border-color);
+    font-size: 1.05rem;
     font-weight: 700;
-    border-top: 2px solid #cfe6cf;
-    border-bottom: 2px solid #cfe6cf;
-    padding: .7rem .8rem;
+    letter-spacing: 0.01em;
   }
 
-  .corpus-name { width: 18ch; font-weight: 600; }
-  .corpus-website { width: 32%; }
-  .corpus-intro   { width: 40%; }
-  .corpus-availability { white-space: nowrap; font-weight: 600; color: #333; }
+  .corpus-category__title::before {
+    content: "";
+    width: 0.42rem;
+    height: 0.42rem;
+    flex: 0 0 0.42rem;
+    border-radius: 50%;
+    background: var(--global-link-color);
+  }
 
-  /* Website cell: thumbnail + link */
-  .site-box { display: flex; gap: .75rem; align-items: flex-start; }
-  .site-thumb { width: 220px; max-width: 35vw; height: auto; border-radius: 6px; border: 1px solid #e5e5e5; }
-  .site-link { margin: .15rem 0 0 0; word-break: break-word; }
-  .site-link a { text-decoration: none; border-bottom: 1px dotted #185c18; }
-  .site-link a:hover { border-bottom-style: solid; }
+  .corpus-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.85rem;
+  }
 
-  /* Mobile: stack cells like cards */
-  @media (max-width: 820px) {
-    .corpus-table thead { display: none; }
-    .corpus-table, .corpus-table tbody, .corpus-table tr, .corpus-table td { display: block; width: 100%; }
-    .corpus-table tbody tr { margin: 0 0 1.2rem; border: 1px solid #eee; border-radius: 10px; overflow: hidden; }
-    .corpus-table tbody td { border: none; padding: .8rem .9rem; }
-    .corpus-cat-row { border: none; }
-    .corpus-cat-row td { border: none; border-radius: 10px; }
-    .corpus-name { font-size: 1.05rem; }
-    .corpus-availability { margin-top: .3rem; }
-    .site-box { flex-direction: column; }
-    .site-thumb { width: 100%; max-width: 100%; }
+  .resource-card {
+    min-width: 0;
+    border: 1px solid var(--global-border-color);
+    border-radius: 10px;
+    background: var(--global-bg-color);
+    transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+  }
+
+  .resource-card:hover {
+    border-color: color-mix(in srgb, var(--global-link-color) 35%, var(--global-border-color));
+    box-shadow: 0 7px 22px rgba(0, 0, 0, 0.055);
+    transform: translateY(-1px);
+  }
+
+  .resource-card[open] {
+    border-color: color-mix(in srgb, var(--global-link-color) 45%, var(--global-border-color));
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  }
+
+  .resource-card summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 76px;
+    padding: 1rem 1.1rem;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .resource-card summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .resource-card__main {
+    min-width: 0;
+  }
+
+  .resource-card__name {
+    display: block;
+    margin-bottom: 0.2rem;
+    color: var(--global-text-color);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.35;
+  }
+
+  .resource-card__availability {
+    display: inline-block;
+    color: var(--global-text-color-light);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 0.76rem;
+    line-height: 1.2;
+  }
+
+  .resource-card__icon {
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    flex: 0 0 28px;
+    border: 1px solid var(--global-border-color);
+    border-radius: 50%;
+    color: var(--global-text-color-light);
+    font-size: 1.05rem;
+    line-height: 1;
+    transition: transform 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+  }
+
+  .resource-card__icon::before {
+    content: "+";
+    transform: translateY(-1px);
+  }
+
+  .resource-card[open] .resource-card__icon {
+    transform: rotate(45deg);
+    color: var(--global-link-color);
+    border-color: color-mix(in srgb, var(--global-link-color) 45%, var(--global-border-color));
+  }
+
+  .resource-card__body {
+    padding: 0 1.1rem 1.1rem;
+    border-top: 1px solid var(--global-border-color);
+  }
+
+  .resource-card__note {
+    margin: 1rem 0 0.85rem;
+    color: var(--global-text-color);
+    font-size: 0.94rem;
+    line-height: 1.65;
+  }
+
+  .resource-card__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 0.83rem;
+    font-weight: 700;
+  }
+
+  .resource-card__link::after {
+    content: "↗";
+    font-size: 0.9rem;
+  }
+
+  .resource-card__link a {
+    text-decoration: none;
+  }
+
+  .resources-page .muted {
+    margin-top: 0.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--global-border-color);
+    color: var(--global-text-color-light);
+  }
+
+  @media (max-width: 760px) {
+    .resources-main {
+      margin-top: 1.5rem;
+    }
+
+    .resources-page .page__content > p:first-of-type {
+      margin-bottom: 2.2rem;
+    }
+
+    .corpus-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .corpus-category {
+      margin-bottom: 2.5rem;
+    }
+
+    .resource-card summary {
+      min-height: 70px;
+      padding: 0.9rem 1rem;
+    }
+
+    .resource-card__body {
+      padding: 0 1rem 1rem;
+    }
   }
 </style>
 
@@ -66,50 +222,36 @@ author_profile: true
   <p>Curated links to corpora, concordancers, and tools for corpus-informed teaching and research. Adapted from the 
     <a href="https://corpus.eduhk.hk/cap/corpus-resources/" target="_blank" rel="noopener">Corpus-Aided Platform (CAP)</a> at EdUHK.</p>
 
-  <div class="corpus-table-wrapper">
-    <table class="corpus-table">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Website</th>
-          <th>Introduction</th>
-          <th>Availability</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for cat in site.data.corpus_resources.categories %}
-          <tr class="corpus-cat-row"><td colspan="4">{{ cat.title }}</td></tr>
+  {% for cat in site.data.corpus_resources.categories %}
+    <section class="corpus-category">
+      <h3 class="corpus-category__title">{{ cat.title }}</h3>
 
-          {% for item in cat.items %}
-          <tr>
-            <td class="corpus-name">{{ item.name }}</td>
-
-            <td class="corpus-website">
-              <div class="site-box">
-                {% if item.screenshot %}
-                  <img class="site-thumb" src="{{ item.screenshot | relative_url }}" alt="{{ item.name }} screenshot">
+      <div class="corpus-grid">
+        {% for item in cat.items %}
+          <details class="resource-card">
+            <summary>
+              <span class="resource-card__main">
+                <span class="resource-card__name">{{ item.name }}</span>
+                {% if item.availability %}
+                  <span class="resource-card__availability">{{ item.availability }}</span>
                 {% endif %}
-                <p class="site-link">
-                  <a href="{{ item.url }}" target="_blank" rel="noopener">
-                    {{ item.url | replace: "https://", "" | replace: "http://", "" }}
-                  </a>
-                </p>
-              </div>
-            </td>
+              </span>
+              <span class="resource-card__icon" aria-hidden="true"></span>
+            </summary>
 
-            <td class="corpus-intro">
-              {% if item.note %}{{ item.note }}{% endif %}
-            </td>
-
-            <td class="corpus-availability">
-              {% if item.availability %}{{ item.availability }}{% endif %}
-            </td>
-          </tr>
-          {% endfor %}
+            <div class="resource-card__body">
+              {% if item.note %}
+                <p class="resource-card__note">{{ item.note }}</p>
+              {% endif %}
+              <p class="resource-card__link">
+                <a href="{{ item.url }}" target="_blank" rel="noopener">Visit resource</a>
+              </p>
+            </div>
+          </details>
         {% endfor %}
-      </tbody>
-    </table>
-  </div>
+      </div>
+    </section>
+  {% endfor %}
 
   <p class="muted" style="font-size:0.9em">
     Notes are brief summaries; please see each site for full details. Last updated: {{ site.time | date: "%Y-%m-%d" }}.
