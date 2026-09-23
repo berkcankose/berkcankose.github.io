@@ -20,19 +20,19 @@ redirect_from:
   </section>
 
   <section class="home-focus" aria-label="Research focus">
-    <a href="{{ base_path }}/research/" class="home-focus__item">
+    <a href="{{ site.baseurl }}/research/" class="home-focus__item">
       <span>01</span>
       <strong>English-medium instruction</strong>
     </a>
-    <a href="{{ base_path }}/research/" class="home-focus__item">
+    <a href="{{ site.baseurl }}/research/" class="home-focus__item">
       <span>02</span>
       <strong>Corpus linguistics</strong>
     </a>
-    <a href="{{ base_path }}/research/" class="home-focus__item">
+    <a href="{{ site.baseurl }}/research/" class="home-focus__item">
       <span>03</span>
       <strong>Language teacher education</strong>
     </a>
-    <a href="{{ base_path }}/research/" class="home-focus__item">
+    <a href="{{ site.baseurl }}/research/" class="home-focus__item">
       <span>04</span>
       <strong>Technology integration in ELT</strong>
     </a>
