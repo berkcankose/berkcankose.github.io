@@ -5,9 +5,12 @@ permalink: /contact/
 author_profile: true
 ---
 
-<div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 40px;">
+<div class="contact-page">
 
-  <div style="flex: 1; min-width: 300px;">
+  <section class="contact-card contact-card--details">
+    <p class="contact-kicker">Get in touch</p>
+    <h2>Contact</h2>
+
     <p><strong>Berkcan Köse</strong><br>
     Research Assistant & PhD student<br>
     Middle East Technical University (METU)<br>
@@ -15,30 +18,42 @@ author_profile: true
     Dept. of Foreign Language Education<br>
     Ankara, TURKEY</p>
 
-    <p><strong>Email</strong><br>
+    <p class="contact-email"><strong>Email</strong><br>
     berkcank [at] metu.edu.tr</p>
-  </div>
+  </section>
 
-  <div style="flex: 1; min-width: 300px;">
+  <section class="contact-card contact-card--form">
+    <p class="contact-kicker">Message</p>
     <h2>Send a Message</h2>
+
     <form action="https://formspree.io/f/xblgkndk" method="POST">
-      <label for="first-name">First Name</label><br>
-      <input type="text" name="first-name" id="first-name" style="width: 100%; margin-bottom: 10px;"><br>
+      <div class="contact-field">
+        <label for="first-name">First Name</label>
+        <input type="text" name="first-name" id="first-name">
+      </div>
 
-      <label for="last-name">Last Name</label><br>
-      <input type="text" name="last-name" id="last-name" style="width: 100%; margin-bottom: 10px;"><br>
+      <div class="contact-field">
+        <label for="last-name">Last Name</label>
+        <input type="text" name="last-name" id="last-name">
+      </div>
 
-      <label for="email">Email *</label><br>
-      <input type="email" name="email" id="email" required style="width: 100%; margin-bottom: 10px;"><br>
+      <div class="contact-field">
+        <label for="email">Email *</label>
+        <input type="email" name="email" id="email" required>
+      </div>
 
-      <label for="subject">Subject</label><br>
-      <input type="text" name="subject" id="subject" style="width: 100%; margin-bottom: 10px;"><br>
+      <div class="contact-field">
+        <label for="subject">Subject</label>
+        <input type="text" name="subject" id="subject">
+      </div>
 
-      <label for="message">Message</label><br>
-      <textarea name="message" id="message" rows="5" style="width: 100%; margin-bottom: 15px;"></textarea><br>
+      <div class="contact-field">
+        <label for="message">Message</label>
+        <textarea name="message" id="message" rows="5"></textarea>
+      </div>
 
-      <button type="submit" style="background-color: #4CAF50; color: white; border: none; padding: 10px 20px; cursor: pointer;">Submit</button>
+      <button type="submit">Submit</button>
     </form>
-  </div>
+  </section>
 
 </div>
