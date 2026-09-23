@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Home"
+title: ""
 author_profile: true
 redirect_from: 
   - /about/
@@ -10,8 +10,6 @@ redirect_from:
 <div class="home-page">
   <section class="home-intro">
     <p class="home-eyebrow">Welcome!</p>
-    <h1>I research the intersections of corpus linguistics, English-medium instruction, language teacher education, and technology integration.</h1>
-
     <p class="home-lead">I’m a Research Assistant and PhD student in the Department of Foreign Language Education at Middle East Technical University (METU), Türkiye.</p>
 
     <p>My research focuses on English-medium instruction, corpus-based approaches to language teaching, teacher education, and the integration of technology in ELT.</p>
