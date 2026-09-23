@@ -7,14 +7,34 @@ redirect_from:
   - /about.html
 ---
 
-<div style="text-align: justify; margin-bottom: 2rem;">
-  <h2 style="margin-top: 0;">Welcome!</h2>
+<div class="home-page">
+  <section class="home-intro">
+    <p class="home-eyebrow">Welcome!</p>
+    <h1>I research the intersections of corpus linguistics, English-medium instruction, language teacher education, and technology integration.</h1>
 
-  I’m a Research Assistant and PhD student in the Department of Foreign Language Education at Middle East Technical University (METU), Türkiye.
+    <p class="home-lead">I’m a Research Assistant and PhD student in the Department of Foreign Language Education at Middle East Technical University (METU), Türkiye.</p>
 
-  My research focuses on English-medium instruction, corpus-based approaches to language teaching, teacher education, and the integration of technology in ELT.
+    <p>My research focuses on English-medium instruction, corpus-based approaches to language teaching, teacher education, and the integration of technology in ELT.</p>
 
-  This website brings together my research and academic interests.
+    <p>This website brings together my research and academic interests.</p>
+  </section>
+
+  <section class="home-focus" aria-label="Research focus">
+    <a href="{{ base_path }}/research/" class="home-focus__item">
+      <span>01</span>
+      <strong>English-medium instruction</strong>
+    </a>
+    <a href="{{ base_path }}/research/" class="home-focus__item">
+      <span>02</span>
+      <strong>Corpus linguistics</strong>
+    </a>
+    <a href="{{ base_path }}/research/" class="home-focus__item">
+      <span>03</span>
+      <strong>Language teacher education</strong>
+    </a>
+    <a href="{{ base_path }}/research/" class="home-focus__item">
+      <span>04</span>
+      <strong>Technology integration in ELT</strong>
+    </a>
+  </section>
 </div>
-
-<hr style="border: 0; height: 1px; background: #e0e0e0; margin-bottom: 2rem;">
