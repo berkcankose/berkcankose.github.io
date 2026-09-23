@@ -4,9 +4,12 @@ layout: default
 
 {% include base_path %}
 
-<div id="main" role="main" class="resources-main">
+<div id="main" role="main" class="resources-shell">
+  {% include sidebar.html %}
+
   <article class="page resources-page" itemscope itemtype="http://schema.org/CreativeWork">
-    {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+    <meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">
+
     <div class="page__inner-wrap">
       <section class="page__content" itemprop="text">
         {{ content }}
