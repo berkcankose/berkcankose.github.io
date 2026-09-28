@@ -96,16 +96,13 @@ categories:
         note: Web-scale collocation/phrase search.
         availability: free
       - name: Corpus Concordance English (Lextutor)
-        url: https://www.lextutor.ca/concordancers/concord_e.html
+        url: https://www.lextutor.ca/conc/eng/
         note: Simple online concordancer with sub-corpus options.
         availability: free
       - name: WebCorp Live
-        url: http://www.webcorp.org.uk/live/
-        note: Build ad-hoc corpora from the web.
-        availability: free
       # — additions from corpling4efl —
       - name: SkELL (Sketch Engine for Language Learning)
-        url: https://skell.sketchengine.co.uk/
+        url: https://skell.sketchengine.eu/
         note: Simple concordances and word sketches; learner-friendly.
         availability: free
       - name: Skylight (browser concordancer)
@@ -178,7 +175,7 @@ categories:
         note: Corpus-derived OERs, games, and apps for learning.
         availability: free
       - name: New General Service List (NGSL)
-        url: https://www.newgeneralservicelist.org/
+        url: https://www.newgeneralservicelist.com/
         note: High-frequency word lists (incl. Academic lists) with resources.
         availability: free
       - name: WriteAway
