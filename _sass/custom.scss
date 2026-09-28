@@ -4,7 +4,7 @@
 
 .masthead {
   background: var(--global-bg-color);
-  box-shadow: 0 1px 0 rgba(47, 127, 147, 0.12);
+  box-shadow: 0 1px 0 rgba(181, 107, 69, 0.12);
 
   &__inner-wrap {
     padding-top: 0.65rem;
@@ -254,7 +254,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .home-focus__item:hover {
   color: var(--global-link-color) !important;
-  border-color: rgba(47, 127, 147, 0.45);
+  border-color: rgba(181, 107, 69, 0.45);
   transform: translateY(-1px);
 }
 
@@ -333,7 +333,7 @@ h1, h2, h3, h4, h5, h6 {
 .contact-field textarea:focus {
   border-color: var(--global-link-color);
   outline: none;
-  box-shadow: 0 0 0 3px rgba(47, 127, 147, 0.1);
+  box-shadow: 0 0 0 3px rgba(181, 107, 69, 0.1);
 }
 
 .contact-card button[type="submit"] {
