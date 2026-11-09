@@ -5,6 +5,7 @@ permalink: /aboutme/
 author_profile: true
 redirect_from:
   - /resume
+back_to_top: true
 ---
 
 {% include base_path %}
@@ -224,4 +225,3 @@ redirect_from:
 
 </div>
 
-<a href="#" id="back-to-top" aria-label="Back to top" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">↑</a>
