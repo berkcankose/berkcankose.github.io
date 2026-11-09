@@ -27,6 +27,14 @@ layout: compress
 
     {% if page.back_to_top %}
     <a href="#" id="back-to-top" aria-label="Back to top" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">↑</a>
+    <script>
+      (function () {
+        var btn = document.getElementById('back-to-top');
+        function toggle() { btn.classList.toggle('is-visible', window.scrollY > 300); }
+        window.addEventListener('scroll', toggle, { passive: true });
+        toggle();
+      })();
+    </script>
     {% endif %}
 
 <script>
