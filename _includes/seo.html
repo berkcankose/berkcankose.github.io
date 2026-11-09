@@ -106,11 +106,50 @@
 {% endif %}
 
 
-{% if site.social %}
-  <script type="application/ld+json">
-    {
-      "@context" : "http://schema.org",
-      "@type" : "{% if site.social.type %}{{ site.social.type }}{% else %}Person{% endif %}",
+{% comment %} Structured data: tells search engines who this site is about {% endcomment %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "honorificPrefix": "Res. Asst.",
+  "name": "Berkcan Köse",
+  "url": "https://berkcankose.com/",
+  "image": "https://berkcankose.com/images/berkcan-share.jpg",
+  "jobTitle": "Research Assistant and PhD student",
+  "worksFor": {
+    "@type": "CollegeOrUniversity",
+    "name": "Middle East Technical University (METU)",
+    "department": {
+      "@type": "Organization",
+      "name": "Department of Foreign Language Education"
+    }
+  },
+  "alumniOf": [
+    { "@type": "CollegeOrUniversity", "name": "Anadolu University" }
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Ankara",
+    "addressCountry": "TR"
+  },
+  "knowsAbout": [
+    "English-medium instruction",
+    "Corpus linguistics",
+    "Language teacher education",
+    "Technology integration in ELT",
+    "Classroom interaction",
+    "Discourse analysis"
+  ],
+  "sameAs": [
+    "https://avesis.metu.edu.tr/berkcank",
+    "https://scholar.google.com.tr/citations?user=Wr32iY0AAAAJ",
+    "https://orcid.org/0000-0001-5414-7583",
+    "https://www.researchgate.net/profile/Berkcan-Kose",
+    "https://www.linkedin.com/in/berkcankose",
+    "https://x.com/berkcan_kose"
+  ]
+}
+</script>",
       "name" : "{{ site.social.name | default: site.name }}",
       "url" : {{ seo_url | jsonify }},
       "sameAs" : {{ site.social.links | jsonify }}
