@@ -215,6 +215,7 @@ h1, h2, h3, h4, h5, h6 {
 .home-intro p:not(.home-eyebrow):not(.home-lead) {
   max-width: 700px;
   color: var(--global-text-color-light);
+  color: color-mix(in srgb, var(--global-text-color) 40%, var(--global-text-color-light));
   font-size: 0.91rem;
   line-height: 1.7;
 }
