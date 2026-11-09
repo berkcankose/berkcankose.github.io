@@ -149,13 +149,7 @@
     "https://x.com/berkcan_kose"
   ]
 }
-</script>",
-      "name" : "{{ site.social.name | default: site.name }}",
-      "url" : {{ seo_url | jsonify }},
-      "sameAs" : {{ site.social.links | jsonify }}
-    }
-  </script>
-{% endif %}
+</script>
 
 {% if site.google_site_verification %}
   <meta name="google-site-verification" content="{{ site.google_site_verification }}" />
