@@ -184,7 +184,7 @@ redirect_from:
         <div class="about-card">
           <p class="about-card__meta">2015</p>
           <p class="about-card__title">Erasmus+ Exchange</p>
-          <p class="about-card__text">Liceum Ogólnoksztatcace im. Adama Mickiewicza w Opolu Lubelskim, Lublin, POLAND</p>
+          <p class="about-card__text">Liceum Ogólnokształcące im. Adama Mickiewicza w Opolu Lubelskim, Lublin, POLAND</p>
         </div>
       </article>
 
